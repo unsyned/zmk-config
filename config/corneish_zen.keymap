@@ -177,7 +177,7 @@
         //│    0     │     1    │     2    │    3     │    =     │      │   CAPS   │   ESC    │CAPS WORD │  SHIFT   │          │
           &kp KP_PLUS  &kp N1    &kp N2      &kp N3   &kp TAB             &kp CAPS   &kp ESC  &caps_word &kp RSHFT  &sk RSHFT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                &bootloader  &kp N0     &kp ENTER         &trans      &kp TAB   &sys_reset
+                                &bootloader  &kp N0     &kp ENTER         &trans      &trans   &sys_reset
         //                      ╰──────────┴──────────┴──────────╯      ╰──────────┴──────────┴──────────╯
             >;
         };

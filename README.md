@@ -27,6 +27,8 @@ Here are the "characterizing" features of each version:
     - I realized that without colemak on base layer, I would have to toggle back to that layer after waking my wireless keyboard every time... annoying.
 5. Backspace is on left thumb. Centered around re-prioritizing 6 key functions: space, backspace, enter, esc, del, tab
     - I started thinking about backspace on base layer after a meetup, and tried it. This made more sense, as I would be backspacing more than hitting esc. The very same weekend I added key overrides to move delete off of my pinky. The thought process is that delete is kind of a modified backspace, and tab is also a sort of modified space, hence shift + space/backspace.
+    - Unfortunately, my timing on releasing shift after letters like "I" leaves something to be desired. I will have to work on this or come up with an alternative.
+    - Additionally, (not quite sure which version this happened in) I removed the parentheses from their spots on the symbol row that comes from numbers for "symmetry" with the other brackets/braces. I have some duplicated symbols while I nail down the best spots for things, and I may move the :; in favor of ~` on sym row (they're on base row so this isn't as important of a refinement).
 
 
 

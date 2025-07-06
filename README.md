@@ -40,6 +40,12 @@ When flashing on Linux, make sure to mount the keyboard before copying the UF2.
 bluetoothctl
 scan on # then wait for the name to pop up, and take note of the MAC address
 pair <MAC address>
+connect <MAC address>
 trust <MAC address>
 ```
 
+Sometimes, when using settings reset firmware (after changing the name of the board for example), the keyboard is remembered by your device, and device forgotten by board. Just restart bluetooth service, and it should be solved.
+
+```zsh
+systemctl restart bluetooth # does this need sudo?
+```

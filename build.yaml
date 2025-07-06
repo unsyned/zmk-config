@@ -28,16 +28,16 @@ include:
     shield: corne_left nice_view_adapter nice_view
   - board: nice_nano_v2
     shield: corne_right nice_view_adapter nice_view
-  - board: nice_nano_v2
-    shield: settings_reset
+  # - board: nice_nano_v2
+    # shield: settings_reset
   # le jlwffre
   - board: le_jlwffre
-  - board: le_jlwffre
-    shield: settings_reset
+  # - board: le_jlwffre
+    # shield: settings_reset
   # zen
   - board: corneish_zen_v2_left
   - board: corneish_zen_v2_right
-  - board: corneish_zen_v2_left
-    shield: settings_reset
-  - board: corneish_zen_v2_right
-    shield: settings_reset
+  # - board: corneish_zen_v2_left
+  #   shield: settings_reset
+  # - board: corneish_zen_v2_right
+  #   shield: settings_reset

@@ -6,6 +6,8 @@ manifest:
       # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
     - name: jlw # You can name this whatever you like; just make sure the "remote" below matches.
       url-base: https://github.com/josh-l-wang
+    - name: m165437 # nice view gem
+      url-base: https://github.com/M165437
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -15,5 +17,8 @@ manifest:
     - name: zmk-config-jlw
       remote: jlw
       revision: main # This is the name of the branch you want to use.
+    - name: nice-view-gem
+      remote: m165437
+      revision: main
   self:
     path: config

@@ -167,10 +167,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│     -    │     7    │     8    │     9    │    ,     │      │  PG UP   │  HOME    │    UP    │  END     │  SL 4    │
-        &kp KP_MINUS  &kp N7      &kp N8      &kp N9   &kp KP COMMA       &kp PG_UP  &kp HOME    &kp UP     &kp END   &sl 4
+        &kp KP_MINUS  &kp N7      &kp N8      &kp N9   &kp COMMA          &kp PG_UP  &kp HOME    &kp UP     &kp END   &sl 4
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│     -    │     4    │     5    │    6     │    .     │      │  PG DN   │  LEFT    │  DOWN    │  RIGHT   │  DEL     │
-          &kp KP_MINUS   &kp N4  &kp N5  &kp N6   &kp KP DOT              &kp PG_DN  &kp LEFT  &kp DOWN    &kp RIGHT   &kp DEL
+          &kp KP_MINUS   &kp N4  &kp N5  &kp N6   &kp DOT                 &kp PG_DN  &kp LEFT  &kp DOWN    &kp RIGHT   &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│     +    │     1    │     2    │    3     │   TAB    │      │   CAPS   │   ESC    │CAPS WORD │  SHIFT   │   PRINT  │
           &kp KP_PLUS  &kp N1    &kp N2      &kp N3   &kp TAB             &kp CAPS   &kp ESC  &caps_word &kp RSHFT  &kp PSCRN

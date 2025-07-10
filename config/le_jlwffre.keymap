@@ -155,17 +155,16 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        // TODO: fix graphics on layers
         nav {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  BT 0    │  BT 1    │  BT 2    │  BT 3    │  BT CLR  │      │  PG UP   │  HOME    │  UP      │  END     │  SL 4    │
-        &kp KP_MINUS  &kp N7      &kp N8      &kp N9   &kp KP_SLASH       &kp PG_UP  &kp HOME    &kp UP     &kp END   &sl 4
+        //│     -    │     7    │     8    │     9    │    ,     │      │  PG UP   │  HOME    │    UP    │  END     │  SL 4    │
+        &kp KP_MINUS  &kp N7      &kp N8      &kp N9   &kp KP_COMMA     &kp PG_UP  &kp HOME    &kp UP     &kp END   &sl 4
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  TAB     │  TAB     │   ESC    │  F11     │  F12     │      │  PG DN   │  LEFT    │  DOWN    │  RIGHT   │  DEL     │
-          &kp KP_MINUS   &kp N4  &kp N5  &kp N6   &kp KP_MULTIPLY          &kp PG_DN  &kp LEFT  &kp DOWN    &kp RIGHT   &kp DEL
+        //│     -    │     4    │     5    │    6     │    .     │      │  PG DN   │  LEFT    │  DOWN    │  RIGHT   │  DEL     │
+        &kp KP_MINUS   &kp N4  &kp N5  &kp N6   &kp KP_DOT              &kp PG_DN  &kp LEFT  &kp DOWN    &kp RIGHT   &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  F1      │  F2      │  F3      │  F4      │  F5      │      │  F6      │  F7      │  F8      │  F9      │  F10     │
+        //│     +    │     1    │     2    │    3     │   TAB    │      │   CAPS   │   ESC    │CAPS WORD │  SHIFT   │   PRINT  │
           &kp KP_PLUS  &kp N1    &kp N2      &kp N3   &kp TAB           &kp CAPS   &kp ESC   &caps_word  &kp RSHFT  &kp PSCRN
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                         &kp N0   &kp ENTER       &trans     &trans    &trans

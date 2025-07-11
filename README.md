@@ -29,6 +29,10 @@ Here are the "characterizing" features of each version:
     - I started thinking about backspace on base layer after a meetup, and tried it. This made more sense, as I would be backspacing more than hitting esc. The very same weekend I added key overrides to move delete off of my pinky. The thought process is that delete is kind of a modified backspace, and tab is also a sort of modified space, hence shift + space/backspace.
     - Unfortunately, my timing on releasing shift after letters like "I" leaves something to be desired. I will have to work on this or come up with an alternative.
     - Additionally, (not quite sure which version this happened in) I removed the parentheses from their spots on the symbol row that comes from numbers for "symmetry" with the other brackets/braces. I have some duplicated symbols while I nail down the best spots for things, and I may move the :; in favor of ~` on sym row (they're on base row so this isn't as important of a refinement).
+6. While looking for an example of an svg style config for keymap-drawer, urob's kle map helped me realize that I could condense some of my duplicate and unused symbols. Namely, the angle brackets on the comma and period keys. This also means there is space on the base layer for '", and space on the home row layer for ~\` (like I had originally planned to do with ~\`). This should be more comfortable in the long run, as I believe that quick access to double/single quote is essential for the standard english typing flow.
+    - ' back on base layer of 5 col boards
+    - uses more overrides to get ;: back on base layer (with the help of shift)
+    - ~` off of bottom left row for symbols, which is the weakest side and row, and made for slow typing
 
 
 

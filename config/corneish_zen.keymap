@@ -86,6 +86,24 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
+
+        comma: comma_semicolon_on_shift {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA_SEMICOLON_ON_SHIFT";
+            bindings = <&kp COMMA>, <&kp SEMI>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dot: dot_colon_on_shift {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_COLON_ON_SHIFT";
+            bindings = <&kp DOT>, <&kp COLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     combos {
@@ -112,14 +130,14 @@
             label = "col";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮                      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  F       │  P       │  B       │                      │  J      │  L       │  U       │  Y       │  ;       │
-             &kp Q      &kp W      &kp F      &kp P      &kp B                             &kp J      &kp L      &kp U      &kp Y      &kp SEMI
+        //│  Q       │  W       │  F       │  P       │  B       │                      │  J       │  L       │  U       │  Y       │  '"      │
+             &kp Q      &kp W      &kp F      &kp P      &kp B                             &kp J      &kp L      &kp U      &kp Y      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  G       │                      │  M       │  N       │  E       │  I       │  O       │
         &hrm LCTRL A  &hrm LALT R  &hrm LGUI S  &hrs LSHFT T  &kp G                     &kp M   &hrs RSHFT N  &hrm RGUI E  &hrm RALT I  &hrm RCTRL O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , <     │  . >     │  / ?     │
-             &kp Z      &kp X      &kp C      &kp D      &kp V                             &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
+        //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
+             &kp Z      &kp X      &kp C      &kp D      &kp V                             &kp K      &kp H      &comma  &dot    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                   &kp LGUI    &mo 2      &bspc                              &space  &mo 3 &kp RIGHT_ALT
         //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯
@@ -133,11 +151,11 @@
         //│  Q       │  W       │  E       │  R       │  T       │                      │  Y       │  U       │  I       │  O       │  P       │
              &kp Q      &kp W      &kp E      &kp R      &kp T                             &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │                      │  H       │  J       │  K       │  L       │  ;:      │
-        &hrm LCTRL A  &hrm LALT S  &hrm LGUI D  &hrs LSHFT F  &kp G                     &kp H   &hrs RSHFT J  &hrm RGUI K  &hrm RALT L  &hrm RCTRL SEMI
+        //│  A       │  S       │  D       │  F       │  G       │                      │  H       │  J       │  K       │  L       │  '"      │
+        &hrm LCTRL A  &hrm LALT S  &hrm LGUI D  &hrs LSHFT F  &kp G                     &kp H   &hrs RSHFT J  &hrm RGUI K  &hrm RALT L  &hrm RCTRL SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │                      │  N       │  M       │  , <     │  . >     │  / ?     │
-             &kp Z      &kp X      &kp C      &kp V      &kp B                             &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+        //│  Z       │  X       │  C       │  V       │  B       │                      │  N       │  M       │  , ;     │  . :     │  / ?     │
+             &kp Z      &kp X      &kp C      &kp V      &kp B                             &kp N      &kp M      &comma     &dot      &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                   &kp LGUI    &mo 2      &bspc                              &space  &mo 3 &kp RIGHT_ALT
         //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯
@@ -148,13 +166,13 @@
             label = "sym";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  <       │  [       │  {       │  (       │  ~       │      │  |       │  )       │  }       │  ]       │  >       │
-        &kp LESS_THAN    &kp LBKT   &kp LBRC   &kp LPAR    &kp TILDE      &kp PIPE       &kp RPAR     &kp RBRC    &kp RBKT   &kp GREATER_THAN
+        //│  <       │  [       │  {       │  (       │  \       │      │  |       │  )       │  }       │  ]       │  >       │
+        &kp LESS_THAN    &kp LBKT   &kp LBRC   &kp LPAR    &kp BSLH      &kp PIPE       &kp RPAR     &kp RBRC    &kp RBKT   &kp GREATER_THAN
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  !       │  @       │   #      │    $     │     %    │      │  ^       │   &      │  *       │  (       │  )       │
-        &kp EXCLAMATION  &kp AT     &kp HASH   &kp DOLLAR  &kp PERCENT    &kp CARET      &kp AMPS     &kp STAR    &kp SQT    &kp DQT
+        //│  !       │  @       │   #      │    $     │     %    │      │  ^       │   &      │  *       │  ~       │  `       │
+        &kp EXCLAMATION  &kp AT     &kp HASH   &kp DOLLAR  &kp PERCENT    &kp CARET      &kp AMPS     &kp STAR    &kp TILDE    &kp GRAVE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│   \      │ ~        │ `~       │  "       │ '"       │      │  _       │   -      │  +       │  =       │  \       │
+        //│   \      │ ~        │ `~       │  "       │ '"       │      │  _       │   -      │  +       │  =       │  ?       │
         &kp BSLH         &kp TILDE  &kp GRAVE  &kp COLON   &kp SEMI       &kp UNDER      &kp MINUS    &kp PLUS    &kp EQUAL  &kp QMARK
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                    &trans     &trans      &trans         &kp ESC  &kp TAB  &trans

@@ -49,3 +49,15 @@ Sometimes, when using settings reset firmware (after changing the name of the bo
 ```zsh
 systemctl restart bluetooth # does this need sudo?
 ```
+
+#### WIP Keymap Drawer Config
+```
+svg.keymap { fill: #f3deaa; }
+            rect.key { fill: #3c3836; }
+            rect.key, rect.combo { stroke: #3c3836; }
+            rect.combo, rect.combo-separate { fill: #af3a03; }
+            rect.held, rect.combo.held { fill: #ae5858; }
+            text.label, text.footer { stroke: black; }
+            text.trans { fill: #7e8184; }
+            path.combo { stroke: #7f7f7f; }
+```

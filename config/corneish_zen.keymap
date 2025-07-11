@@ -167,10 +167,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  <       │  [       │  {       │  (       │  \       │      │  |       │  )       │  }       │  ]       │  >       │
-        &kp LESS_THAN    &kp LBKT   &kp LBRC   &kp LPAR    &kp BSLH      &kp PIPE       &kp RPAR     &kp RBRC    &kp RBKT   &kp GREATER_THAN
+        &kp LESS_THAN    &kp LBKT   &kp LBRC   &kp LPAR    &kp BSLH       &kp PIPE   &kp RPAR   &kp RBRC   &kp RBKT   &kp GREATER_THAN
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  !       │  @       │   #      │    $     │     %    │      │  ^       │   &      │  *       │  ~       │  `       │
-        &kp EXCLAMATION  &kp AT     &kp HASH   &kp DOLLAR  &kp PERCENT    &kp CARET      &kp AMPS     &kp STAR    &kp TILDE    &kp GRAVE
+        &kp EXCLAMATION  &kp AT     &kp HASH   &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPS   &kp STAR   &kp TILDE  &kp GRAVE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│   \      │ ~        │ `~       │  "       │ '"       │      │  _       │   -      │  +       │  =       │  ?       │
         &kp BSLH         &kp TILDE  &kp GRAVE  &kp COLON   &kp SEMI       &kp UNDER      &kp MINUS    &kp PLUS    &kp EQUAL  &kp QMARK
@@ -184,11 +184,11 @@
             label = "nav";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│     -    │     7    │     8    │     9    │    ,     │      │  PG UP   │  HOME    │    UP    │  END     │  SL 4    │
-        &kp KP_MINUS  &kp N7      &kp N8      &kp N9   &kp COMMA          &kp PG_UP  &kp HOME    &kp UP     &kp END   &sl 4
+        //│    *     │     7    │     8    │     9    │    ,     │      │  PG UP   │  HOME    │    UP    │  END     │  SL 4    │
+          &kp STAR    &kp N7      &kp N8      &kp N9   &kp COMMA          &kp PG_UP  &kp HOME    &kp UP     &kp END   &sl 4
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│     -    │     4    │     5    │    6     │    .     │      │  PG DN   │  LEFT    │  DOWN    │  RIGHT   │  DEL     │
-          &kp KP_MINUS   &kp N4  &kp N5  &kp N6   &kp DOT                 &kp PG_DN  &kp LEFT  &kp DOWN    &kp RIGHT   &kp DEL
+          &kp KP_MINUS   &kp N4  &kp N5     &kp N6     &kp DOT           &kp PG_DN  &kp LEFT  &kp DOWN    &kp RIGHT   &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│     +    │     1    │     2    │    3     │   TAB    │      │   CAPS   │   ESC    │CAPS WORD │  SHIFT   │   PRINT  │
           &kp KP_PLUS  &kp N1    &kp N2      &kp N3   &kp TAB             &kp CAPS   &kp ESC  &caps_word &kp RSHFT  &kp PSCRN
@@ -202,16 +202,16 @@
             display-name = "bt";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│     -    │     7    │     8    │     9    │     /    │      │  PG UP   │  HOME    │    UP    │  END     │  INSERT  │
-        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR    &trans  &trans  &tog 1  &kp F11 &kp F12
+        //│    F12   │    F7    │    F8    │    F9    │          │      │          │          │   tog 1  │          │          │
+           &kp F12    &kp F7     &kp F8     &kp F9       &trans            &trans     &trans     &tog 1     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│     +    │     4    │     5    │    6     │    *     │      │  PG DN   │  LEFT    │  DOWN    │  RIGHT   │  DEL     │
-        &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+        //│    F11   │    F4    │    F5    │    F6    │          │      │          │          │          │          │          │
+           &kp F11    &kp F4     &kp F5     &kp F6       &trans         &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│    0     │     1    │     2    │    3     │    =     │      │          │  CAPS    │          │          │          │
-            &trans      &trans     &trans     &trans     &trans          &trans      &trans      &trans     &trans     &trans
+        //│    F10   │    F1    │    F2    │    F3    │          │      │          │          │          │          │          │
+           &kp F10    &kp F1     &kp F2     &kp F3       &trans            &trans     &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                &trans        &trans        &trans          &trans     &trans    &trans
+                                   &trans     &trans     &trans            &trans     &trans     &trans
         //                      ╰──────────┴──────────┴──────────╯      ╰──────────┴──────────┴──────────╯
             >;
         };

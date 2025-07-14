@@ -104,7 +104,7 @@
 
         escape {
             bindings = <&kp ESC>;
-            key-positions = <27 26>;
+            key-positions = <2 3>;
             timeout-ms = <30>;
             layers = <0 1>;
         };
@@ -114,6 +114,16 @@
             key-positions = <32 33>;
             timeout-ms = <30>;
             layers = <0 1>;
+        };
+
+        copy {
+            bindings = <&kp LC(INS)>;
+            key-positions = <26 27>;
+        };
+
+        paste {
+            bindings = <&kp LS(INSERT)>;
+            key-positions = <27 28>;
         };
     };
 

@@ -1,8 +1,12 @@
 # Layouts
 
+![zen](./zen.png)
+
 ![corne](./cornetto.png)
 
-![zen](./zen.png)
+![chiff](./chiff.png)
+
+![extended](./zen-layout.png)
 
 TODO: create layout for bluetooth le chiffre to use keymap drawer
 

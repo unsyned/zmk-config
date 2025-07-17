@@ -185,7 +185,7 @@
         //│   \      │ ~        │ `~       │  "       │ '"       │      │  _       │   -      │  +       │  =       │  ?       │
         &kp BSLH         &kp TILDE  &kp GRAVE  &kp COLON   &kp SEMI       &kp UNDER      &kp MINUS    &kp PLUS    &kp EQUAL  &kp QMARK
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                   &trans     &trans      &trans         &kp ESC  &kp TAB  &trans
+                                &bootloader     &trans      &trans         &kp ESC  &kp TAB  &trans
         //                      ╰──────────┴──────────┴──────────╯      ╰──────────┴──────────┴──────────╯
             >;
         };
@@ -203,7 +203,7 @@
         //│     +    │     1    │     2    │    3     │   TAB    │      │  PRINT   │CAPS WORD │  CAPS    │  SHIFT   │   SL 4   │
           &kp KP_PLUS  &kp N1    &kp N2      &kp N3   &kp TAB            &kp PSCRN &caps_word   &kp CAPS &kp RSHFT  &sl 4
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                &bootloader  &kp N0     &kp ENTER         &trans      &trans   &sys_reset
+                                &trans  &kp N0     &kp ENTER         &trans      &trans   &sys_reset
         //                      ╰──────────┴──────────┴──────────╯      ╰──────────┴──────────┴──────────╯
             >;
         };

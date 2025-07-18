@@ -166,7 +166,7 @@
             // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | SHFT |
             //                    | GUI | LWR | ESC |   | SPC | RSE  | ALT |
 
-            display-name = "mac";
+            display-name = "col";
             bindings = <
 &kp TAB           &kp Q           &kp W         &kp F         &kp P           &kp B      &kp J      &kp L           &kp U        &kp Y          &kp SQT        &kp BSPC
 &mt LCTRL ESCAPE  &hrm LCTRL A    &hrm LALT R   &hrm LGUI S   &hrs LSHIFT T   &kp G      &kp M      &hrs RSHIFT N   &hrm RGUI E  &hrm RALT I    &hrm RCTRL O   &kp ENTER

@@ -86,7 +86,7 @@
             bindings = <&kp COMMA>, <&kp SEMI>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LSFT)>;
         };
 
         dot: dot_colon_on_shift {
@@ -95,7 +95,7 @@
             bindings = <&kp DOT>, <&kp COLON>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LSFT)>;
         };
     };
 

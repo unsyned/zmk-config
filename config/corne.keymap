@@ -116,35 +116,76 @@
             layers = <0 1>;
         };
 
+        // one handed copy/paste on mac
         copy {
-            bindings = <&kp LC(INS)>;
+            bindings = <&kp LG(C)>;
             key-positions = <26 27>;
+            layers = <0>;
         };
 
         paste {
-            bindings = <&kp LS(INSERT)>;
+            bindings = <&kp LG(V)>;
             key-positions = <27 28>;
+            layers = <0>;
         };
+
+        cut {
+            bindings = <&kp LG(X)>;
+            key-positions = <26 28>;
+            layers = <0>;
+        };
+
+        // TODO: if the power cycle toggle layer issue has a work around, implement the following combos on that layer
+        // one handed cut copy paste for linux and windows
+        // copy_lw {
+        //     bindings = <&kp LC(C)>;
+        //     key-positions = <26 27>;
+        //     layers = <1>;
+        // };
+        //
+        // paste_lw {
+        //     bindings = <&kp LC(V)>;
+        //     key-positions = <27 28>;
+        //     layers = <1>;
+        // };
+        //
+        // cut_lw {
+        //     bindings = <&kp LC(X)>;
+        //     key-positions = <26 28>;
+        //     layers = <1>;
+        // };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        col {
+        mac {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP |
-            // | CTRL |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  |SH/ENT|
+            // | CTRL |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  | ENT  |
+            // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | SHFT |
             //                    | GUI | LWR | ESC |   | SPC | RSE  | ALT |
 
-            display-name = "col";
+            display-name = "mac";
             bindings = <
 &kp TAB           &kp Q           &kp W         &kp F         &kp P           &kp B      &kp J      &kp L           &kp U        &kp Y          &kp SQT        &kp BSPC
-&mt LCTRL ESCAPE  &hrm LCTRL A    &hrm LALT R   &hrm LGUI S   &hrs LSHIFT T   &kp G      &kp M      &hrs RSHIFT N   &hrm RGUI E  &hrm RALT I    &hrm RCTRL O   &kp SQT
-&kp LSHFT         &kp Z           &kp X         &kp C         &kp D           &kp V      &kp K      &kp H           &comma       &dot           &kp FSLH       &mt RSHIFT ENTER
+&mt LCTRL ESCAPE  &hrm LCTRL A    &hrm LALT R   &hrm LGUI S   &hrs LSHIFT T   &kp G      &kp M      &hrs RSHIFT N   &hrm RGUI E  &hrm RALT I    &hrm RCTRL O   &kp ENTER
+&kp LSHFT         &kp Z           &kp X         &kp C         &kp D           &kp V      &kp K      &kp H           &comma       &dot           &kp FSLH       &kp RSHIFT
                                                         &kp LGUI         &mo 2              &bspc    &space      &mo 3        &kp RALT
             >;
         };
+
+        // TODO: the linux layer hack does not work, as tog layer switches don't persist through power cycles
+        // lin {
+        //
+        //     display-name = "lin";
+        //     bindings = <
+        //       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  
+        //       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  
+        //       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  
+        //                               &trans  &trans  &trans  &trans  &trans  &trans
+        //     >;
+        // };
 
         qwr {
             // -----------------------------------------------------------------------------------------

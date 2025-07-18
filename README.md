@@ -60,13 +60,27 @@ systemctl restart bluetooth # does this need sudo?
 ```
 
 #### WIP Keymap Drawer Config
-```
+gruvbox
+```css
 svg.keymap { fill: #f3deaa; }
+
             rect.key { fill: #3c3836; }
             rect.key, rect.combo { stroke: #3c3836; }
             rect.combo, rect.combo-separate { fill: #af3a03; }
             rect.held, rect.combo.held { fill: #ae5858; }
             text.label, text.footer { stroke: black; }
+            text.trans { fill: #7e8184; }
+            path.combo { stroke: #7f7f7f; }
+```
+kanagawa
+```css
+svg.keymap { fill: #f3deaa; }
+            rect.key { fill: #2A2A37; }
+            rect.key, rect.combo { stroke: #2A2A37; }
+            rect.combo, rect.combo-separate { fill: #79A39D; }
+            rect.held, rect.combo.held { fill: #7E9CD9; }
+            text.label, text.footer { stroke: black; }
+text.hold {stroke:  #C0A26E;}
             text.trans { fill: #7e8184; }
             path.combo { stroke: #7f7f7f; }
 ```

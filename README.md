@@ -2,11 +2,15 @@
 
 ![zen](./zen.png)
 
-![corne](./cornetto.png)
-
 ![chiff](./chiff.png)
 
-![extended](./zen-layout.png)
+* coming soon: ![corne](./cornetto.png)
+
+![extended zen](./zen-layout.png)
+
+![extended chiff](./chiff-layout.png)
+
+![extended cornetto](./cornetto-layout.png)
 
 TODO: create layout for bluetooth le chiffre to use keymap drawer
 
@@ -77,8 +81,8 @@ kanagawa
 svg.keymap { fill: #f3deaa; }
             rect.key { fill: #2A2A37; }
             rect.key, rect.combo { stroke: #2A2A37; }
-            rect.combo, rect.combo-separate { fill: #79A39D; }
-            rect.held, rect.combo.held { fill: #7E9CD9; }
+            rect.combo, rect.combo-separate { fill: #907CB4; }
+            rect.held, rect.combo.held { fill: #79A39D; }
             text.label, text.footer { stroke: black; }
 text.hold {stroke:  #C0A26E;}
             text.trans { fill: #7e8184; }

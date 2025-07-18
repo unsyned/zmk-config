@@ -6,15 +6,12 @@
 
 * coming soon: ![corne](./cornetto.png)
 
-![extended zen](./zen-layout.png)
+## Extended Layouts
+[extended zen](./zen-layout.png)
+[extended chiff](./chiff-layout.png)
+[extended cornetto](./cornetto-layout.png)
 
-![extended chiff](./chiff-layout.png)
-
-![extended cornetto](./cornetto-layout.png)
-
-TODO: create layout for bluetooth le chiffre to use keymap drawer
-
-## Versions
+# Versions
 Every version before is "archival" and considered sub v1 I guess...
 
 A brief history:

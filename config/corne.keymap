@@ -169,7 +169,7 @@
             display-name = "cnr";
             bindings = <
 &kp TAB           &kp W           &kp L         &kp Y         &kp P           &kp B      &kp Z      &kp F           &kp O        &kp U          &kp SQT        &kp BSPC
-&mt LCTRL ESCAPE  &hrm LCTRL C    &hrm LALT R   &hrm LGUI S   &hrs LSHIFT T   &kp G      &kp M      &hrs RSHIFT N   &hrm RGUI E  &hrm RALT I    &hrm RCTRL O   &kp ENTER
+&mt LCTRL ESCAPE  &hrm LCTRL C    &hrm LALT R   &hrm LGUI S   &hrs LSHIFT T   &kp G      &kp M      &hrs RSHIFT N   &hrm RGUI E  &hrm RALT I    &hrm RCTRL A   &kp ENTER
 &kp LSHFT         &kp Q           &kp J         &kp V         &kp D           &kp K      &kp X      &kp H           &comma       &dot           &kp FSLH       &kp RSHIFT
                                                         &kp LGUI         &mo 2              &bspc    &space      &mo 3        &kp RALT
             >;

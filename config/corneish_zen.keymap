@@ -164,20 +164,20 @@
     keymap {
         compatible = "zmk,keymap";
 
-        col {
-            label = "col";
+        canary {
+            label = "cnr";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮                      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  F       │  P       │  B       │                      │  J       │  L       │  U       │  Y       │  '"      │
-             &kp Q      &kp W      &kp F      &kp P      &kp B                             &kp J      &kp L      &kp U      &kp Y      &kp SQT
+             &kp W      &kp L      &kp Y      &kp P      &kp B                             &kp Z      &kp F      &kp O      &kp U      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  G       │                      │  M       │  N       │  E       │  I       │  O       │
-        &hrm LCTRL A  &hrm LALT R  &hrm LGUI S  &hrs LSHFT T  &kp G                     &kp M   &hrs RSHFT N  &hrm RGUI E  &hrm RALT I  &hrm RCTRL O
+        &hrm LCTRL C  &hrm LALT R  &hrm LGUI S  &hrs LSHFT T  &kp G                     &kp M   &hrs RSHFT N  &hrm RGUI E  &hrm RALT I  &hrm RCTRL A
         //├──────────┼──────────┼──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
-             &kp Z      &kp X      &kp C      &kp D      &kp V                             &kp K      &kp H      &comma  &dot    &kp FSLH
+             &kp Q      &kp J      &kp V      &kp D      &kp K                             &kp X      &kp H      &comma  &dot    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                  &kp LGUI    &mo 2      &bspc                              &space  &mo 3 &kp RIGHT_ALT
+                                   &kp LGUI   &mo 2      &bspc                             &space     &mo 3      &kp RIGHT_ALT
         //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯
             >;
         };

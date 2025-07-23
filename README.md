@@ -85,3 +85,18 @@ text.hold {stroke:  #C0A26E;}
             text.trans { fill: #7e8184; }
             path.combo { stroke: #7f7f7f; }
 ```
+
+## Alternate key layouts
+About a year ago, I decided I wanted to try a layout more comfortable than QWERTY. I then put that on pause so that I wouldn't look like a fool on scree share at my first job. (That was a mistake.)
+
+Anywho. Fast forward to May 2025, and the itch is emerging again. I dove into colemak-dh (I figured since most find it more comfy than vanilla, I should go ahead). Giving up vanilla colemak meant losing muscle memory for paste, which was a trade I was willing to make. As I rose to a comfortable typing speed, I had a growing resentment for a few things: the lk bigram (right index), A being all by its lonesome on the left hand, (and niche things like the location of jk and zq bigram for vim). I didn't like how often I was pressing those corner keys, v and k. I loved a few things, least obvious being the location of L, and things like cd bigram. 
+
+So, what to do? Since I already have learned an akl, and already abandonded the shortcut muscle memory, there is nothing to lose by giving up those few things and learning a different akl.
+
+In searching for a remedy, I considered gallium, graphite, nerps, aptv3 (particularly tempting for its jk placement), and canary. Key points were base layer punctuation (did not want to shake up my symbol layer too severely), which actually ruled out a lot... and some other things I am forgetting at the moment. 
+
+First thoughts - I dislike the HO bigram, the new position of L and W (W more so), and the sfb UI.
+
+I did like the rolls colemak dh provided as well.
+
+I should consider swapping space and backspace. To balance out the right hand dominance.

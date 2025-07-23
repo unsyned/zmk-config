@@ -12,18 +12,18 @@
       "t": "427B58\n\n#8f3f71",
       "p": "DSA"
     },
-    "{\nF8\n8\n\n\n\n\n\n\nY",
+    "{\nF8\n8\n\n\n\n\n\n\nF",
     {
       "x": 7.25
     },
-    "}\nQWR\n▴\n\n\n\n\n\n\nO"
+    "}\nQWR\n▴\n\n\n\n\n\n\nU"
   ],
   [
     {
       "y": -0.8700000000000001,
       "x": 2.5
     },
-    "[\nF7\n7\n\n\n\n\n\n\nL",
+    "[\nF7\n7\n\n\n\n\n\n\nW",
     {
       "x": 1
     },
@@ -31,11 +31,11 @@
     {
       "x": 5.25
     },
-    ")\n\n↟\n\n\n\n\n\n\nF",
+    ")\n\n↟\n\n\n\n\n\n\nL",
     {
       "x": 1
     },
-    "]\n\n↡\n\n\n\n\n\n\nU"
+    "]\n\n↡\n\n\n\n\n\n\nY"
   ],
   [
     {
@@ -46,14 +46,14 @@
     {
       "x": 3.25
     },
-    "|\n\n⇞\n\n\n\n\n\n\nZ"
+    "|\n\n⇞\n\n\n\n\n\n\nJ"
   ],
   [
     {
       "y": -0.8700000000000001,
       "x": 1.5
     },
-    "<\nF12\n*\n\n\n\n\n\n\nW",
+    "<\nF12\n*\n\n\n\n\n\n\nQ",
     {
       "x": 11.25,
       "t": "427B58\n\n\n\n\n\n\n\n#f3deaa"
@@ -112,7 +112,7 @@
       "x": 11.25,
       "t": "427B58"
     },
-    "`\nB4\nDEL\n\n\n\n\n\n\nA\nctrl"
+    "`\nB4\nDEL\n\n\n\n\n\n\nO\nctrl"
   ],
   [
     {
@@ -120,7 +120,7 @@
       "x": 3.5,
       "t": "427B58\n\n#8f3f71"
     },
-    "\nF2\n2\n\n\n\n\n\n\nV",
+    "\nF2\n2\n\n\n\n\n\n\nC",
     {
       "x": 7.25,
       "t": "427B58\n\n#8f3f71\n\n\n\n\n\n#f3deaa"
@@ -133,7 +133,7 @@
       "x": 2.5,
       "t": "427B58\n\n#8f3f71"
     },
-    "\nF1\n1\n\n\n\n\n\n\nJ",
+    "\nF1\n1\n\n\n\n\n\n\nX",
     {
       "x": 1
     },
@@ -154,18 +154,18 @@
       "x": 5.5,
       "t": "427B58\n\n#8f3f71"
     },
-    "\n\n↹\n\n\n\n\n\n\nK",
+    "\n\n↹\n\n\n\n\n\n\nV",
     {
       "x": 3.25
     },
-    "_\n\n⎙\n\n\n\n\n\n\nX"
+    "_\n\n⎙\n\n\n\n\n\n\nK"
   ],
   [
     {
       "y": -0.8700000000000001,
       "x": 1.5
     },
-    "\nF10\n+\n\n\n\n\n\n\nQ",
+    "\nF10\n+\n\n\n\n\n\n\nZ",
     {
       "x": 11.25,
       "t": "427B58\n\n#8f3f71\n\n\n\n\n\n#f3deaa"

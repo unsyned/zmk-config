@@ -136,7 +136,7 @@
         };
 
         cut {
-            bindings = <&kp LG(V)>;
+            bindings = <&kp LG(X)>;
             key-positions = <21 23>;
             layers = <0>;
         };

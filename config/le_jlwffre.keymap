@@ -149,7 +149,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
              &kp W      &kp Q      &kp V      &kp D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot    
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp LGUI    &lhbs 2 0       &kp C_MUTE      &ltsp 3 0  &kp RIGHT_ALT
+                                             &kp ESC    &lhbs 2 0       &kp C_MUTE      &ltsp 3 0   &kp ENTER
         //                                 ╰──────────┴──────────╯                      ╰──────────┴──────────╯
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;

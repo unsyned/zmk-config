@@ -41,6 +41,12 @@ Here are the "characterizing" features of each version:
     - ~` off of bottom left row for symbols, which is the weakest side and row, and made for slow typing
 
 
+7. Switching to canary
+
+8. Switching to fletchling
+    8.5 Swapping the number symbols row with the braces row, because parens and braces are used more than those few symbols, apart from maybe vim
+
+
 
 #### TROUBLESHOOTING
 When flashing on Linux, make sure to mount the keyboard before copying the UF2.

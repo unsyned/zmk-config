@@ -232,7 +232,7 @@
 // &trans  &kp STAR      &kp N7  &kp N8  &kp N9  &kp COMMA          &kp INS    &kp HOME    &kp UP    &kp END    &kp PG_UP  &trans
 // &trans  &kp KP_MINUS  &kp N4  &kp N5  &kp N6  &kp DOT            &kp DEL    &kp LEFT    &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
 &trans  &kp STAR      &kp N7  &kp N8  &kp N9  &kp COMMA          &kp PG_UP  &kp HOME    &kp UP    &kp END    &kp INS    &trans
-&trans  &kp KP_MINUS  &kp N4  &kp N5  &kp N6  &kp DOT            &kp PG_DN  &kp LEFT    &kp DOWN  &kp RIGHT  &kp DEL    &trans
+&trans  &hrm LCTRL KP_MINUS  &hrm LALT N4  &hrm LGUI N5  &hrs LSHFT N6  &kp DOT            &kp PG_DN  &kp LEFT    &kp DOWN  &kp RIGHT  &kp DEL    &trans
 &trans  &kp KP_PLUS   &kp N1  &kp N2  &kp N3  &kp TAB            &kp PSCRN  &caps_word  &kp CAPS  &kp RSHFT  &sl 4      &trans
                               &trans  &kp N0  &kp ENTER          &trans     &trans      &trans
             >;

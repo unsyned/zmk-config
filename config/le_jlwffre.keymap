@@ -198,7 +198,7 @@
         &kp KP_MINUS      &kp N7      &kp N8      &kp N9   &kp COMMA        &kp PG_UP  &kp HOME    &kp UP     &kp END   &kp INS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│     0    │     1    │     2    │    3     │    :     │      │  PG DN   │  LEFT    │  DOWN    │  RIGHT   │  DEL     │
-&hrm LCTRL N0  &hrm LALT N1  &hrm LGUI N2  &hrs LSHFT N3  &kp COLON            &kp PG_DN  &kp LEFT    &kp DOWN  &kp RIGHT  &kp DEL    &trans
+&hrm LCTRL N0  &hrm LALT N1  &hrm LGUI N2  &hrs LSHFT N3  &kp COLON            &kp PG_DN  &kp LEFT    &kp DOWN  &kp RIGHT  &kp DEL
         // &kp KP_MINUS   &kp N4  &kp N5  &kp N6   &kp DOT                 &kp PG_DN  &kp LEFT  &kp DOWN    &kp RIGHT   &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│     +    │     4    │     5    │    6     │    .     │      │   CAPS   │   ESC    │CAPS WORD │  SHIFT   │   PRINT  │

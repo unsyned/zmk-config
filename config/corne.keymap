@@ -221,20 +221,20 @@
 //TODO: fix below graphic
         nav {
             // -----------------------------------------------------------------------------------------
-            // |      |  *  |  7  |  8  |  9  |  ,  |   |PGUP | HME | UP  | END |BKSP  |      |
-            // |      |  -  |  4  |  5  |  6  |  .  |   |PGDWN| LFT | DWN |RGHT | DEL  |      |
-            // |      |  +  |  1  |  2  |  3  | TAB |   |sl 3 |CAPS |CWORD|RSHFT|ORSHFT|      |
-            //                    |     |  0  | ENT |   |     |     |    |
+            // |      |  -  |  7  |  8  |  9  |  ,  |   |PGUP | HME | UP  | END |BKSP  |      |
+            // |      |  0  |  1  |  2  |  3  |  :  |   |PGDWN| LFT | DWN |RGHT | DEL  |      |
+            // |      |  +  |  4  |  5  |  6  |  .  |   |sl 3 |CAPS |CWORD|RSHFT|ORSHFT|      |
+            //                    |     | TAB | ENT |   |     |     |    |
 
             display-name = "nav";
             bindings = <
 // consider this config?
 // &trans  &kp STAR      &kp N7  &kp N8  &kp N9  &kp COMMA          &kp INS    &kp HOME    &kp UP    &kp END    &kp PG_UP  &trans
 // &trans  &kp KP_MINUS  &kp N4  &kp N5  &kp N6  &kp DOT            &kp DEL    &kp LEFT    &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
-&trans  &kp STAR      &kp N7  &kp N8  &kp N9  &kp COMMA          &kp PG_UP  &kp HOME    &kp UP    &kp END    &kp INS    &trans
-&trans  &hrm LCTRL KP_MINUS  &hrm LALT N4  &hrm LGUI N5  &hrs LSHFT N6  &kp DOT            &kp PG_DN  &kp LEFT    &kp DOWN  &kp RIGHT  &kp DEL    &trans
-&trans  &kp KP_PLUS   &kp N1  &kp N2  &kp N3  &kp TAB            &kp PSCRN  &caps_word  &kp CAPS  &kp RSHFT  &sl 4      &trans
-                              &trans  &kp N0  &kp ENTER          &trans     &trans      &trans
+&trans  &kp KP_MINUS     &kp N7  &kp N8  &kp N9  &kp COMMA          &kp PG_UP  &kp HOME    &kp UP    &kp END    &kp INS    &trans
+&trans  &hrm LCTRL N0 &hrm LALT N1  &hrm LGUI N2  &hrs LSHFT N3  &kp COLON            &kp PG_DN  &kp LEFT    &kp DOWN  &kp RIGHT  &kp DEL    &trans
+&trans  &kp KP_PLUS   &kp N4  &kp N5  &kp N6  &kp DOT            &kp PSCRN  &caps_word  &kp CAPS  &kp RSHFT  &sl 4      &trans
+                              &trans  &kp TAB  &kp ENTER          &trans     &trans      &trans
             >;
         };
 

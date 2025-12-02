@@ -2,7 +2,7 @@
 
 ![zen](./zen.png)
 
-![chiff](./chiff.png)
+~~![chiff](./chiff.png)~~
 
 * coming soon: ![corne](./cornetto.png)
 

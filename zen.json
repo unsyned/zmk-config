@@ -1,0 +1,235 @@
+[
+  {
+    "backcolor": "#958839",
+    "name": "zen",
+    "css": "#keyboard-bg {\n    background-color: #ECDBB7 !important;\n    /*background-color: #737386 !important;*/\n}\n\n\n.keyborder {\n    background-color: #2A2A37;\n    border-radius: 5px !important;\n}\n\n.keylabel0{font-size: 0.8rem; color: #FF9E66 !important;}  /* Top-left      */\n.keylabel1{                   color: #DCD7BA !important;}  /* Top-center    */\n.keylabel2{font-size: 0.8rem; color: #79A39D !important;}  /* Top-right     */\n\n.keylabel4{                   color: #DCD7BA !important;}  /* Middle-center */\n\n.keylabel6{font-size: 0.8rem; color: #7E9CD9 !important;}  /* Bottom-left   */\n.keylabel7{font-size: 0.8rem; color: #C0A26E !important;} /* Bottom-center*/\n.keylabel8{font-size: 0.8rem; color: #E46976 !important;}  /* Bottom-right  */"
+  },
+  [
+    {
+      "y": 1,
+      "x": 3.5,
+      "c": "#2A2A37",
+      "t": "427B58\n\n#8f3f71",
+      "p": "DSA"
+    },
+    "#\nF8\n8\n\n\n\n\n\n\nY",
+    {
+      "x": 7.25
+    },
+    "*\nQWR\n▴\n\n\n\n\n\n\nO"
+  ],
+  [
+    {
+      "y": -0.8700000000000001,
+      "x": 2.5
+    },
+    "@\nF7\n7\n\n\n\n\n\n\nL",
+    {
+      "x": 1
+    },
+    "$\nF9\n9\n\n\n\n\n\n\nP",
+    {
+      "x": 5.25
+    },
+    "&\n\n↟\n\n\n\n\n\n\nF",
+    {
+      "x": 1
+    },
+    "~\n\n↡\n\n\n\n\n\n\nU"
+  ],
+  [
+    {
+      "y": -0.8799999999999999,
+      "x": 5.5
+    },
+    "%\n\n,\n\n\n\n\n\n\nK",
+    {
+      "x": 3.25
+    },
+    "^\n\n⇞\n\n\n\n\n\n\nZ"
+  ],
+  [
+    {
+      "y": -0.8700000000000001,
+      "x": 1.5
+    },
+    "!\nF12\n-\n\n\n\n\n\n\nJ",
+    {
+      "x": 11.25,
+      "t": "427B58\n\n\n\n\n\n\n\n#f3deaa"
+    },
+    "`\n\nINS\n\n\n\n\n\n\"\n'"
+  ],
+  [
+    {
+      "y": -0.3799999999999999,
+      "x": 3.5,
+      "t": "427B58\n\n#8f3f71"
+    },
+    "{\nF5\n2\n\n\n\n\n\n\nS\ngui",
+    {
+      "x": 7.25
+    },
+    "}\nB2\n▾\n\n\n\n\n\n\nE\ngui"
+  ],
+  [
+    {
+      "y": -0.8700000000000001,
+      "x": 2.5
+    },
+    "[\nF4\n1\n\n\n\n\n\n\nR\nalt",
+    {
+      "x": 1
+    },
+    "(\nF6\n3\n\n\n\n\n\n\nT\nshft",
+    {
+      "x": 5.25
+    },
+    ")\nB1\n◂\n\n\n\n\n\n\nN\nshft",
+    {
+      "x": 1
+    },
+    "]\nB3\n▸\n\n\n\n\n\n\nI\nalt"
+  ],
+  [
+    {
+      "y": -0.8799999999999999,
+      "x": 5.5
+    },
+    "\\\n\n:\n\n\n\n\n\n\nG",
+    {
+      "x": 3.25
+    },
+    "|\nCLR\n⇟\n\n\n\n\n\n\nM"
+  ],
+  [
+    {
+      "y": -0.8700000000000001,
+      "x": 1.5
+    },
+    "<\nF11\n0\n\n\n\n\n\n\nC\nctrl",
+    {
+      "x": 11.25,
+      "t": "427B58"
+    },
+    ">\nB4\nDEL\n\n\n\n\n\n\nA\nctrl"
+  ],
+  [
+    {
+      "y": -0.3799999999999999,
+      "x": 3.5,
+      "t": "427B58\n\n#8f3f71"
+    },
+    "\nF2\n5\n\n\n\n\n\n\nV",
+    {
+      "x": 7.25,
+      "t": "427B58\n\n#8f3f71\n\n\n\n\n\n#f3deaa"
+    },
+    "+\n\n⇪\n\n\n\n\n\n?\n/"
+  ],
+  [
+    {
+      "y": -0.8700000000000001,
+      "x": 2.5,
+      "t": "427B58\n\n#8f3f71"
+    },
+    "\nF1\n4\n\n\n\n\n\n\nQ",
+    {
+      "x": 1
+    },
+    "\nF3\n6\n\n\n\n\n\n\nD",
+    {
+      "x": 5.25
+    },
+    "-\n\nCW\n\n\n\n\n\n\nH",
+    {
+      "x": 1,
+      "t": "427B58\n\n#8f3f71\n\n\n\n\n\n#f3deaa"
+    },
+    "=\n\n⇧\n\n\n\n\n\n;\n,"
+  ],
+  [
+    {
+      "y": -0.8799999999999999,
+      "x": 5.5,
+      "t": "427B58\n\n#8f3f71"
+    },
+    "\n\n.\n\n\n\n\n\n\nB",
+    {
+      "x": 3.25
+    },
+    "_\n\n⎙\n\n\n\n\n\n\nX"
+  ],
+  [
+    {
+      "y": -0.8700000000000001,
+      "x": 1.5
+    },
+    "\nF10\n+\n\n\n\n\n\n\nW",
+    {
+      "x": 11.25,
+      "t": "427B58\n\n#8f3f71\n\n\n\n\n\n#f3deaa"
+    },
+    "\n\nL5\n\n\n\n\n\n:\n."
+  ],
+  [
+    {
+      "rx": 6.5,
+      "ry": 4.25,
+      "x": -2.5,
+      "t": "#f3deaa",
+      "a": 7
+    },
+    "gui"
+  ],
+  [
+    {
+      "rx": 13,
+      "x": -1.75
+    },
+    "alt"
+  ],
+  [
+    {
+      "r": 15,
+      "rx": 6.5,
+      "y": 0.34999999999999964,
+      "x": -1.1500000000000004,
+      "t": "427B58\n\n#8f3f71\n\n\n\n\n\n\n#427B58",
+      "a": 4
+    },
+    "\n\nTAB\n\n\n\n\n\n\nsym"
+  ],
+  [
+    {
+      "r": 30,
+      "y": -1.5,
+      "x": 0.25,
+      "t": "#f3deaa",
+      "a": 5,
+      "h": 1.5
+    },
+    "del\n↵\n\n\n\n\nbspc"
+  ],
+  [
+    {
+      "r": -30,
+      "rx": 13,
+      "y": -1.7999999999999998,
+      "x": -4.0600000000000005,
+      "t": "#f3deaa\n#FF9E66",
+      "h": 1.5
+    },
+    "↹\nesc\n\n\n\n\nspc"
+  ],
+  [
+    {
+      "r": -15,
+      "y": 0.2999999999999998,
+      "x": -3,
+      "t": "427B58\n\n\n\n\n\n\n\n\n#8f3f71",
+      "a": 4
+    },
+    "↹\n\n\n\n\n\n\n\n\nnav"
+  ]
+]

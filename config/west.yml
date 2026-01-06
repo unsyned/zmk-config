@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/josh-l-wang
     - name: m165437 # nice view gem
       url-base: https://github.com/M165437
+    - name: kinesis
+      url-base: https://github.com/KinesisCorporation
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -20,5 +22,8 @@ manifest:
     - name: nice-view-gem
       remote: m165437
       revision: main
+    - name: zmk-config-kinesis
+      remote: kinesis
+      revision: V3.0
   self:
     path: config

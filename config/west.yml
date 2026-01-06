@@ -25,5 +25,6 @@ manifest:
     - name: zmk-config-kinesis
       remote: kinesis
       revision: V3.0
+      import: config/west.yml
   self:
     path: config

@@ -1,5 +1,6 @@
 # Layouts
 
+<span style="color:red">OUTDATED</span>.
 ![zen](./zen.png)
 
 * coming soon: ![corne](./cornetto.png)
@@ -44,6 +45,8 @@ Here are the "characterizing" features of each version:
 8. Switching to fletchling
     8.5 Swapping the number symbols row with the braces row, because parens and braces are used more than those few symbols, apart from maybe vim
 
+9. Prioritizing shift over esc
+    - I don't mind the two key action to use esc on the symbol layer instead of dedicated, but I do use enter enough that I notice it more. Second thumb key is now one shot shift on tap and caps word on double tap
 
 
 #### TROUBLESHOOTING

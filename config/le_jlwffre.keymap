@@ -10,6 +10,15 @@
 
 / {
     behaviors {
+        td_scw: tap_dance_shift_caps_word {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TAP_DANCE_SHIFT_CW";
+          bindings = <&sk LSHFT>, <&caps_word>;
+
+          #binding-cells = <0>;
+          tapping-term-ms = <175>;
+        };
+
         hrm: homewrow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -149,7 +158,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
              &kp W      &kp Q      &kp V      &kp D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot    
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp ESC    &lhbs 2 0       &kp C_MUTE      &ltsp 3 0   &kp ENTER
+                                             &td_scw    &lhbs 2 0       &kp C_MUTE      &ltsp 3 0   &kp ENTER
         //                                 ╰──────────┴──────────╯                      ╰──────────┴──────────╯
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;

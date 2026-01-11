@@ -1,7 +1,10 @@
 # Layouts
 
-<span style="color:red">OUTDATED</span>.
+OUTDATED.
 ![zen](./zen.png)
+
+## TODO:
+    - add semi colon and colon to the symbol layer where they are in qmk
 
 * coming soon: ![corne](./cornetto.png)
 

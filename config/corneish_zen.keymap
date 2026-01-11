@@ -220,7 +220,7 @@
         &hrm LCTRL LESS_THAN  &hrm LALT LBKT  &hrm LGUI LBRC  &hrs LSHFT LPAR   &kp BSLH  &kp PIPE  &hrs RSHFT RPAR  &hrm RGUI RBRC  &hrm RALT RBKT  &hrm RCTRL GREATER_THAN
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│   \      │ ~        │ `~       │  "       │ '"       │      │  _       │   -      │  +       │  =       │  ?       │
-        &kp BSLH         &kp TILDE  &kp GRAVE  &kp COLON   &kp SEMI       &kp UNDER      &kp MINUS    &kp PLUS    &kp EQUAL  &kp QMARK
+        &kp BSLH      &kp COLON   &kp SEMI &kp TILDE  &kp GRAVE         &kp UNDER      &kp MINUS    &kp PLUS    &kp EQUAL  &kp QMARK
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                 &bootloader     &trans      &trans         &kp ESC  &kp TAB  &trans
         //                      ╰──────────┴──────────┴──────────╯      ╰──────────┴──────────┴──────────╯

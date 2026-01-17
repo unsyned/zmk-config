@@ -26,7 +26,7 @@
           tapping-term-ms = <175>;
         };
 
-        hrm: homewrow_mods {
+        hrm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             bindings = <&kp>, <&kp>;
@@ -37,7 +37,7 @@
             flavor = "tap-preferred";
         };
 
-        hrs: homewrow_shift {
+        hrs: homerow_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_SHIFT";
             bindings = <&kp>, <&kp>;
@@ -186,25 +186,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
              &kp W      &kp Q      &kp V      &kp D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot    
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                   &shift   &mo 2      &bspc                             &space     &mo 3      &kp ENTER
-        //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯
-            >;
-        };
-
-        qwr {
-            label = "qwr";
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮                      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │                      │  Y       │  U       │  I       │  O       │  P       │
-             &kp Q      &kp W      &kp E      &kp R      &kp T                             &kp Y      &kp U      &kp I      &kp O      &kp P
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │                      │  H       │  J       │  K       │  L       │  '"      │
-        &hrm LCTRL A  &hrm LALT S  &hrm LGUI D  &hrs LSHFT F  &kp G                     &kp H   &hrs RSHFT J  &hrm RGUI K  &hrm RALT L  &hrm RCTRL SQT
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │                      │  N       │  M       │  , ;     │  . :     │  / ?     │
-             &kp Z      &kp X      &kp C      &kp V      &kp B                             &kp N      &kp M      &comma     &dot      &kp FSLH
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                  &kp LGUI    &mo 2      &bspc                              &space  &mo 3 &kp RIGHT_ALT
+                                   &trans   &shift       &lhbs 1 0                         &ltsp 2 0     &kp ENTER      &trans
         //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯
             >;
         };

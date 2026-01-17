@@ -180,7 +180,7 @@
 &kp TAB           &kp J           &kp L         &kp Y         &kp P           &kp K      &kp Z      &kp F           &kp O        &kp U          &kp SQT        &kp BSPC
 &mt LCTRL ESCAPE  &hrm LCTRL C    &hrm LALT R   &hrm LGUI S   &hrs LSHIFT T   &kp G      &kp M      &hrs RSHIFT N   &hrm RGUI E  &hrm RALT I    &hrm RCTRL A   &kp ENTER
 &kp LSHFT         &kp W           &kp Q         &kp V         &kp D           &kp B      &kp X      &kp H           &kp FSLH     &comma         &dot           &kp RSHIFT
-                                                                  &trans    &shift    &lhbs 2 0    &ltsp 3 0    &kp ENTER    &trans
+                                                                  &trans    &lhbs 2 0    &shift    &kp ENTER    &ltsp 3 0    &trans
             >;
         };
 

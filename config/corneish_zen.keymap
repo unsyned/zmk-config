@@ -17,10 +17,20 @@
 
 / {
     behaviors {
-        shift: tap_dance_shift_caps_word {
+        shift: hold_tap_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_CAPS_WORD";
+            bindings = <&kp>, <&sk LSHIFT>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "hold-preferred";
+        }
+
+        td_shift: tap_dance_shift_caps_word {
           compatible = "zmk,behavior-tap-dance";
           label = "TAP_DANCE_SHIFT_CW";
-          bindings = <&sk LSHFT>, <&caps_word>;
+          bindings = <&shift RSHIFT 0>, <&caps_word>;
 
           #binding-cells = <0>;
           tapping-term-ms = <200>;
@@ -186,7 +196,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
              &kp W      &kp Q      &kp V      &kp D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot    
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                   &trans   &lhbs 1 0      &shift                          &kp ENTER     &ltsp 2 0      &trans
+                                   &trans   &lhbs 1 0      &td_shift                          &kp ENTER     &ltsp 2 0      &trans
         //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯
             >;
         };

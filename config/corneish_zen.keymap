@@ -17,24 +17,39 @@
 
 / {
     behaviors {
-        shift: hold_tap_shift {
+        ht: hold_tap{
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_TAP_CAPS_WORD";
-            bindings = <&kp>, <&sk LSHIFT>;
-
+            label = "HOLD_TAP";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&caps_word>;
         };
-
-        td_shift: tap_dance_shift_caps_word {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TAP_DANCE_SHIFT_CW";
-          bindings = <&shift RSHIFT 0>, <&caps_word>;
-
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
+        td_ht: tap_dance_hold_tap {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_HOLD_TAP";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&ht LSHIFT 0>, <&kp CAPSLOCK>;
         };
+        // shift: hold_tap_shift {
+        //     compatible = "zmk,behavior-hold-tap";
+        //     label = "HOLD_TAP_CAPS_WORD";
+        //     bindings = <&kp>, <&sk LSHIFT>;
+        //
+        //     #binding-cells = <2>;
+        //     tapping-term-ms = <150>;
+        //     flavor = "hold-preferred";
+        // };
+        //
+        // td_shift: tap_dance_shift_caps_word {
+        //   compatible = "zmk,behavior-tap-dance";
+        //   label = "TAP_DANCE_SHIFT_CW";
+        //   bindings = <&shift RSHIFT 0>, <&caps_word>;
+        //
+        //   #binding-cells = <0>;
+        //   tapping-term-ms = <200>;
+        // };
 
         hrm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -196,7 +211,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
              &kp W      &kp Q      &kp V      &kp D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot    
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                   &trans   &lhbs 1 0      &td_shift                          &kp ENTER     &ltsp 2 0      &trans
+                                   &trans   &lhbs 1 0      &td_ht                          &kp ENTER     &ltsp 2 0      &trans
         //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯
             >;
         };

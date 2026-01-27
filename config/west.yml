@@ -19,6 +19,6 @@ manifest:
       revision: main # This is the name of the branch you want to use.
     - name: nice-view-gem
       remote: m165437
-      revision: main
+      revision: v0.3.0 # revision should match zmk's revision
   self:
     path: config

@@ -20,10 +20,10 @@
         shift: tap_dance_shift_caps_word {
           compatible = "zmk,behavior-tap-dance";
           label = "TAP_DANCE_SHIFT_CW";
-          bindings = <&sk RSHFT>, <&caps_word>;
+          bindings = <&sk LSHFT>, <&caps_word>;
 
           #binding-cells = <0>;
-          tapping-term-ms = <175>;
+          tapping-term-ms = <200>;
         };
 
         hrm: homerow_mods {

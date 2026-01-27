@@ -17,39 +17,24 @@
 
 / {
     behaviors {
-        ht: hold_tap{
+        shift: hold_tap_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_TAP";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+            label = "HOLD_TAP_SHIFT";
             bindings = <&kp>, <&sk>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "hold-preferred";
         };
-        td_ht: tap_dance_hold_tap {
+
+        td_shift: tap_dance_shift_caps_word {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_HOLD_TAP";
+            label = "TAP_DANCE_SHIFT_CW";
+            bindings = <&shift RSHIFT LSHIFT>, <&caps_word>;
+
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&ht RSHIFT LSHIFT>, <&caps_word>;
         };
-        // shift: hold_tap_shift {
-        //     compatible = "zmk,behavior-hold-tap";
-        //     label = "HOLD_TAP_CAPS_WORD";
-        //     bindings = <&kp>, <&sk LSHIFT>;
-        //
-        //     #binding-cells = <2>;
-        //     tapping-term-ms = <150>;
-        //     flavor = "hold-preferred";
-        // };
-        //
-        // td_shift: tap_dance_shift_caps_word {
-        //   compatible = "zmk,behavior-tap-dance";
-        //   label = "TAP_DANCE_SHIFT_CW";
-        //   bindings = <&shift RSHIFT 0>, <&caps_word>;
-        //
-        //   #binding-cells = <0>;
-        //   tapping-term-ms = <200>;
-        // };
 
         hrm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -211,7 +196,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
              &kp W      &kp Q      &kp V      &kp D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot    
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                   &trans   &lhbs 1 0      &td_ht                          &kp ENTER     &ltsp 2 0      &trans
+                                   &trans   &td_shift      &lhbs 1 0                          &ltsp 2 0     &kp ENTER      &trans
         //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯
             >;
         };

@@ -23,14 +23,14 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&caps_word>;
+            bindings = <&kp>, <&sk LSHIFT>;
         };
         td_ht: tap_dance_hold_tap {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_HOLD_TAP";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&ht LSHIFT 0>, <&kp CAPSLOCK>;
+            bindings = <&ht RSHIFT 0>, <&caps_word>;
         };
         // shift: hold_tap_shift {
         //     compatible = "zmk,behavior-hold-tap";

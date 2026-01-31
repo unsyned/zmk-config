@@ -304,8 +304,8 @@
             bindings = <
               // TODO: consider matching the numpad layer in this arrangement
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│    F12   │    F7    │    F8    │    F9    │          │      │          │          │  to OS   │          │          │
-           &kp F12    &kp F7     &kp F8     &kp F9       &trans            &trans     &trans     &to 1      &trans     &trans
+        //│    F12   │    F7    │    F8    │    F9    │          │      │          │    mac   │  linux   │          │          │
+           &kp F12    &kp F7     &kp F8     &kp F9       &trans            &trans     &df 0     &df 1      &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│    F11   │    F4    │    F5    │    F6    │          │      │          │          │          │          │          │
            &kp F11    &kp F4     &kp F5     &kp F6       &trans         &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3

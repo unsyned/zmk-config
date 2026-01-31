@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/josh-l-wang
     - name: m165437 # nice view gem
       url-base: https://github.com/M165437
+    - name: elpekenin
+      url-base: https://github.com/elpekenin
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -20,5 +22,8 @@ manifest:
     - name: nice-view-gem
       remote: m165437
       revision: v0.3.0 # revision should match zmk's revision
+    - name: zmk-userspace # for persistent default layer
+      remote: elpekenin
+      revision: main
   self:
     path: config

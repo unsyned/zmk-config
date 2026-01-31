@@ -191,6 +191,18 @@
             layers = <0>;
         };
 
+        undo {
+            bindings = <&kp LG(Z)>;
+            key-positions = <6 7>;
+            layers = <0>;
+        };
+
+        redo {
+            bindings = <&kp LG(LS(Z))>;
+            key-positions = <7 8>;
+            layers = <0>;
+        };
+
         // linux combos
         copy_lin {
             bindings = <&kp LC(C)>;
@@ -213,13 +225,25 @@
         back_word_lin {
             bindings = <&kp LC(BSPC)>;
             key-positions = <11 13>;
-            layers = <0>;
+            layers = <1>;
         };
 
         del_word_lin {
             bindings = <&kp LC(DEL)>;
             key-positions = <16 18>;
-            layers = <0>;
+            layers = <1>;
+        };
+
+        undo_lin {
+            bindings = <&kp LC(Z)>;
+            key-positions = <6 7>;
+            layers = <1>;
+        };
+
+        redo_lin {
+            bindings = <&kp LC(Y)>;
+            key-positions = <7 8>;
+            layers = <1>;
         };
 
     };

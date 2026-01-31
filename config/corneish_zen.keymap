@@ -182,26 +182,28 @@
         back_word {
             bindings = <&kp LA(BSPC)>;
             key-positions = <11 13>;
+            require-prior-idle-ms = <50>;
             layers = <0>;
         };
 
         del_word {
             bindings = <&kp LA(DEL)>;
             key-positions = <16 18>;
+            require-prior-idle-ms = <50>;
             layers = <0>;
         };
 
         undo {
             bindings = <&kp LG(Z)>;
             key-positions = <6 7>;
-            require-prior-idle-ms = <40>;
+            require-prior-idle-ms = <50>;
             layers = <0>;
         };
 
         redo {
             bindings = <&kp LG(LS(Z))>;
             key-positions = <7 8>;
-            require-prior-idle-ms = <40>;
+            require-prior-idle-ms = <50>;
             layers = <0>;
         };
 
@@ -227,26 +229,28 @@
         back_word_lin {
             bindings = <&kp LC(BSPC)>;
             key-positions = <11 13>;
+            require-prior-idle-ms = <50>;
             layers = <1>;
         };
 
         del_word_lin {
             bindings = <&kp LC(DEL)>;
             key-positions = <16 18>;
+            require-prior-idle-ms = <50>;
             layers = <1>;
         };
 
         undo_lin {
             bindings = <&kp LC(Z)>;
             key-positions = <6 7>;
-            require-prior-idle-ms = <40>;
+            require-prior-idle-ms = <50>;
             layers = <1>;
         };
 
         redo_lin {
             bindings = <&kp LC(Y)>;
             key-positions = <7 8>;
-            require-prior-idle-ms = <40>;
+            require-prior-idle-ms = <50>;
             layers = <1>;
         };
 

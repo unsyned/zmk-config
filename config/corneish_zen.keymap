@@ -130,18 +130,36 @@
 
         escape {
             bindings = <&kp ESC>;
-            key-positions = <1 2>;
-            timeout-ms = <30>;
-            layers = <0 1>;
+            key-positions = <11 12>;
+            require-prior-idle-ms = <125>;
+            timeout-ms = <20>;
+            // layers = <0 1>;
         };
 
         enter {
             bindings = <&kp ENTER>;
-            key-positions = <27 28>;
-            timeout-ms = <30>;
-            layers = <0 1>;
+            key-positions = <17 18>;
+            // key-positions = <27 28>;
+            require-prior-idle-ms = <125>;
+            timeout-ms = <20>;
         };
 
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <12 13>;
+            require-prior-idle-ms = <125>;
+            timeout-ms = <20>;
+        };
+
+        caps {
+            bindings = <&kp CAPS>;
+            key-positions = <5 9>;
+            require-prior-idle-ms = <125>;
+            timeout-ms = <20>;
+        };
+
+        //*** OS specific combos ***//
+        // mac combos
         copy {
             bindings = <&kp LG(C)>;
             key-positions = <22 21>;
@@ -160,31 +178,56 @@
             layers = <0>;
         };
 
-        // copy_lin {
-        //     bindings = <&kp LC(C)>;
-        //     key-positions = <22 21>;
-        //     layers = <1>;
-        // };
-        //
-        // paste_lin {
-        //     bindings = <&kp LC(V)>;
-        //     key-positions = <22 23>;
-        //     layers = <1>;
-        // };
-        //
-        // cut_lin {
-        //     bindings = <&kp LC(V)>;
-        //     key-positions = <21 23>;
-        //     layers = <1>;
-        // };
+        back_word {
+            bindings = <&kp LA(BSPC)>;
+            key-positions = <11 13>;
+            layers = <0>;
+        };
+
+        del_word {
+            bindings = <&kp LA(DEL)>;
+            key-positons = <16 18>;
+            layers = <0>;
+        };
+
+        // linux combos
+        copy_lin {
+            bindings = <&kp LC(C)>;
+            key-positions = <22 21>;
+            layers = <1>;
+        };
+
+        paste_lin {
+            bindings = <&kp LC(V)>;
+            key-positions = <22 23>;
+            layers = <1>;
+        };
+
+        cut_lin {
+            bindings = <&kp LC(X)>;
+            key-positions = <21 23>;
+            layers = <1>;
+        };
+
+        back_word_lin {
+            bindings = <&kp LC(BSPC)>;
+            key-positions = <11 13>;
+            layers = <0>;
+        };
+
+        del_word_lin {
+            bindings = <&kp LC(DEL)>;
+            key-positions = <16 18>;
+            layers = <0>;
+        };
 
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        canary {
-            label = "cnr";
+        mac {
+            label = "mac";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮                      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  F       │  P       │  B       │                      │  J       │  L       │  U       │  Y       │  '"      │
@@ -196,7 +239,25 @@
         //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
              &kp W      &kp Q      &kp V      &kp D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot    
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                   &trans   &td_shift      &lhbs 1 0                          &ltsp 2 0     &kp ENTER      &trans
+                                   &trans   &td_shift      &lhbs 2 0                          &ltsp 3 0     &kp ENTER      &trans
+        //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯
+            >;
+        };
+
+        linux {
+            label = "lin";
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮                      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  Q       │  W       │  F       │  P       │  B       │                      │  J       │  L       │  U       │  Y       │  '"      │
+             &kp J      &kp L      &kp Y      &kp P      &kp K                             &kp Z      &kp F      &kp O      &kp U      &kp SQT
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  A       │  R       │  S       │  T       │  G       │                      │  M       │  N       │  E       │  I       │  O       │
+        &hrm LCTRL C  &hrm LALT R  &hrm LGUI S  &hrs LSHFT T  &kp G                     &kp M   &hrs RSHFT N  &hrm RGUI E  &hrm RALT I  &hrm RCTRL A
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
+             &kp W      &kp Q      &kp V      &kp D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot    
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                   &trans   &td_shift      &lhbs 2 0                          &ltsp 3 0     &kp ENTER      &trans
         //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯
             >;
         };
@@ -230,7 +291,7 @@
           &hrm LCTRL N0   &hrm LALT N1  &hrm LGUI N2     &hrs LSHFT N3     &kp COLON           &kp PG_DN  &kp LEFT  &kp DOWN    &kp RIGHT   &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│     +    │     4    │     5    │    6     │    .    │      │  PRINT   │CAPS WORD │  CAPS    │  SHIFT   │   SL 3   │
-          &kp KP_PLUS  &kp N4    &kp N5      &kp N6   &kp DOT            &kp PSCRN &caps_word   &kp CAPS &kp RSHFT  &sl 3
+          &kp KP_PLUS  &kp N4    &kp N5      &kp N6   &kp DOT            &kp PSCRN &caps_word   &kp CAPS &kp RSHFT  &sl 4
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                 &trans  &kp TAB     &kp ENTER         &trans      &trans   &sys_reset
         //                      ╰──────────┴──────────┴──────────╯      ╰──────────┴──────────┴──────────╯

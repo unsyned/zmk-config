@@ -132,8 +132,8 @@
         escape {
             bindings = <&kp ESC>;
             key-positions = <11 12>;
-            require-prior-idle-ms = <125>;
-            timeout-ms = <20>;
+            require-prior-idle-ms = <40>;
+            timeout-ms = <25>;
             // layers = <0 1>;
         };
 
@@ -141,21 +141,21 @@
             bindings = <&kp ENTER>;
             key-positions = <17 18>;
             // key-positions = <27 28>;
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <40>;
             timeout-ms = <20>;
         };
 
         tab {
             bindings = <&kp TAB>;
             key-positions = <12 13>;
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <40>;
             timeout-ms = <20>;
         };
 
         caps {
             bindings = <&kp CAPS>;
             key-positions = <5 9>;
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <40>;
             timeout-ms = <20>;
         };
 

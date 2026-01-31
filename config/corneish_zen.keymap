@@ -194,12 +194,14 @@
         undo {
             bindings = <&kp LG(Z)>;
             key-positions = <6 7>;
+            require-prior-idle-ms = <40>;
             layers = <0>;
         };
 
         redo {
             bindings = <&kp LG(LS(Z))>;
             key-positions = <7 8>;
+            require-prior-idle-ms = <40>;
             layers = <0>;
         };
 
@@ -237,12 +239,14 @@
         undo_lin {
             bindings = <&kp LC(Z)>;
             key-positions = <6 7>;
+            require-prior-idle-ms = <40>;
             layers = <1>;
         };
 
         redo_lin {
             bindings = <&kp LC(Y)>;
             key-positions = <7 8>;
+            require-prior-idle-ms = <40>;
             layers = <1>;
         };
 

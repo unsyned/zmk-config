@@ -154,7 +154,7 @@
 
         caps {
             bindings = <&kp CAPS>;
-            key-positions = <5 9>;
+            key-positions = <6 9>;
             require-prior-idle-ms = <40>;
             timeout-ms = <20>;
         };

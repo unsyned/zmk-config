@@ -183,6 +183,7 @@
             bindings = <&kp LA(BSPC)>;
             key-positions = <11 13>;
             require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
             layers = <0>;
         };
 
@@ -190,6 +191,7 @@
             bindings = <&kp LA(DEL)>;
             key-positions = <16 18>;
             require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
             layers = <0>;
         };
 
@@ -197,6 +199,7 @@
             bindings = <&kp LG(Z)>;
             key-positions = <6 7>;
             require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
             layers = <0>;
         };
 
@@ -204,6 +207,7 @@
             bindings = <&kp LG(LS(Z))>;
             key-positions = <7 8>;
             require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
             layers = <0>;
         };
 
@@ -230,6 +234,7 @@
             bindings = <&kp LC(BSPC)>;
             key-positions = <11 13>;
             require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
             layers = <1>;
         };
 
@@ -237,6 +242,7 @@
             bindings = <&kp LC(DEL)>;
             key-positions = <16 18>;
             require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
             layers = <1>;
         };
 
@@ -244,6 +250,7 @@
             bindings = <&kp LC(Z)>;
             key-positions = <6 7>;
             require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
             layers = <1>;
         };
 
@@ -251,6 +258,7 @@
             bindings = <&kp LC(Y)>;
             key-positions = <7 8>;
             require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
             layers = <1>;
         };
 

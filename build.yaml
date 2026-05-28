@@ -18,6 +18,19 @@
 #
 ---
 include:
+  # cygnus 3x5
+  - board: nice_nano@2
+    shield: corne_left
+    file: config/cygnus.keymap
+    artifact-name: cygnus_left
+  - board: nice_nano@2
+    shield: corne_right
+    file: config/cygnus.keymap
+    artifact-name: cygnus_right
+  - board: nice_nano@2
+    shield: settings_reset
+    artifact-name: cygnus_reset
+
   # typeractive corne w gem
   # - board: nice_nano_v2
   - board: nice_nano@2

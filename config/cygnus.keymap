@@ -9,12 +9,12 @@
 #include <dt-bindings/zmk/bt.h>
 #include "elpekenin/behaviors.dtsi"
 
-/// {
-  //chosen {
-    //zmk,matrix_transform = &default_transform;
-    //zmk,matrix_transform = &five_column_transform;
-  //};
-//};
+/ {
+  chosen {
+    // zmk,matrix_transform = &default_transform;
+    zmk,matrix_transform = &five_column_transform;
+  };
+};
 
 / {
     behaviors {

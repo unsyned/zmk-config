@@ -299,7 +299,8 @@
         //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
              &kp W      &kp Q      &kp V      &kp D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot    
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                   &trans   &td_shift      &lhbs 2 0                          &ltsp 3 0     &kp ENTER      &trans
+                                   // &trans   &td_shift      &lhbs 2 0                          &ltsp 3 0     &kp ENTER      &trans
+                                   &kp A &td_shift   &bspc                                 &space &kp ENTER      &kp B
         //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯
             >;
         };

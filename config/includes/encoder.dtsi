@@ -1,0 +1,17 @@
+#define ENCODER "&kp C_MUTE"
+#define EXTRA_BINDINGS "sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;"
+
+#ifndef EXTRA_BINDINGS
+  #define EXTRA_BINDINGS ""
+#endif
+
+#ifdef ENCODER
+  #define WRAPPED_ENCODER ENCODER ","
+  #ifndef ENCODER &none
+#endif
+#ifndef ENCODER
+  #define ENCODER ""
+  #define WRAPPED_ENCODER ENCODER
+#endif
+
+

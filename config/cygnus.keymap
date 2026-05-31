@@ -280,7 +280,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
              &kp W      &kp Q      &kp V      &kp D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot    
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                   &trans &td_shift   &bspc                                 &space &kp ENTER      &kp trans
+                                   &kp A &td_shift   &bspc                                 &space &kp ENTER      &kp B
                                    // &kp A  &td_shift   &lhbs 2 0                                 &ltsp 3 0 &kp ENTER      &kp A    
         //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯
             >;

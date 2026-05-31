@@ -22,14 +22,14 @@ include:
   - board: nice_nano@2
     shield: corne_left
     cmake-args: >
-      -DCONF_FILE=${GITHUB_WORKSPACE}/config/cygnus.conf
-      -DKEYMAP_FILE=${GITHUB_WORKSPACE}/config/cygnus.keymap
+      -DCONF_FILE=../../config/cygnus.conf
+      -DKEYMAP_FILE=../../config/cygnus.keymap
     artifact-name: cygnus_left
   - board: nice_nano@2
     shield: corne_right
     cmake-args: >
-      -DCONF_FILE=${GITHUB_WORKSPACE}/config/cygnus.conf
-      -DKEYMAP_FILE=${GITHUB_WORKSPACE}/config/cygnus.keymap
+      -DCONF_FILE=../../config/cygnus.conf
+      -DKEYMAP_FILE=../../config/cygnus.keymap
     artifact-name: cygnus_right
   - board: nice_nano@2
     shield: settings_reset

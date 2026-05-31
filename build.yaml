@@ -21,14 +21,15 @@ include:
   # cygnus 3x5
   - board: nice_nano@2
     shield: corne_left
+      # -DCONF_FILE=../../config/cygnus.conf
     cmake-args: >
-      -DCONF_FILE=../../config/cygnus.conf
+      -DEXTRA_CONF_FILE=../../config/cygnus.conf
       -DKEYMAP_FILE=../../config/cygnus.keymap
     artifact-name: cygnus_left
   - board: nice_nano@2
     shield: corne_right
     cmake-args: >
-      -DCONF_FILE=../../config/cygnus.conf
+      -DEXTRA_CONF_FILE=../../config/cygnus.conf
       -DKEYMAP_FILE=../../config/cygnus.keymap
     artifact-name: cygnus_right
   - board: nice_nano@2

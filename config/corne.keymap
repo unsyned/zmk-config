@@ -1,22 +1,40 @@
 /*
- * Copyright (c) 2020 The ZMK Contributors
+ * Copyright (c) 2022 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include "elpekenin/behaviors.dtsi"
+
+/ {
+  chosen {
+    //zmk,matrix_transform = &default_transform;
+    zmk,matrix_transform = &five_column_transform;
+  };
+};
 
 / {
     behaviors {
-        shift: tap_dance_shift_caps_word {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TAP_DANCE_SHIFT_CW";
-          bindings = <&sk RSHFT>, <&caps_word>;
+        shift: hold_tap_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_SHIFT";
+            bindings = <&kp>, <&sk>;
 
-          #binding-cells = <0>;
-          tapping-term-ms = <175>;
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "tap-preferred";
+        };
+
+        td_shift: tap_dance_shift_caps_word {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_SHIFT_CW";
+            bindings = <&shift RSHIFT LSHIFT>, <&caps_word>;
+
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
         };
 
         hrm: homerow_mods {
@@ -113,156 +131,231 @@
 
         escape {
             bindings = <&kp ESC>;
-            key-positions = <2 3>;
-            timeout-ms = <30>;
-            layers = <0 1>;
+            key-positions = <11 12>;
+            require-prior-idle-ms = <40>;
+            timeout-ms = <25>;
+            // layers = <0 1>;
         };
 
         enter {
             bindings = <&kp ENTER>;
-            key-positions = <32 33>;
-            timeout-ms = <30>;
-            layers = <0 1>;
+            key-positions = <17 18>;
+            // key-positions = <27 28>;
+            require-prior-idle-ms = <40>;
+            timeout-ms = <20>;
         };
 
-        // one handed copy/paste on mac
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <12 13>;
+            require-prior-idle-ms = <40>;
+            timeout-ms = <20>;
+        };
+
+        caps {
+            bindings = <&kp CAPS>;
+            key-positions = <6 9>;
+            require-prior-idle-ms = <40>;
+            timeout-ms = <20>;
+        };
+
+        //*** OS specific combos ***//
+        // mac combos
         copy {
             bindings = <&kp LG(C)>;
-            key-positions = <26 27>;
+            key-positions = <22 21>;
             layers = <0>;
         };
 
         paste {
             bindings = <&kp LG(V)>;
-            key-positions = <27 28>;
+            key-positions = <22 23>;
             layers = <0>;
         };
 
         cut {
             bindings = <&kp LG(X)>;
-            key-positions = <26 28>;
+            key-positions = <21 23>;
             layers = <0>;
         };
 
-        // TODO: if the power cycle toggle layer issue has a work around, implement the following combos on that layer
-        // one handed cut copy paste for linux and windows
-        // copy_lw {
-        //     bindings = <&kp LC(C)>;
-        //     key-positions = <26 27>;
-        //     layers = <1>;
-        // };
-        //
-        // paste_lw {
-        //     bindings = <&kp LC(V)>;
-        //     key-positions = <27 28>;
-        //     layers = <1>;
-        // };
-        //
-        // cut_lw {
-        //     bindings = <&kp LC(X)>;
-        //     key-positions = <26 28>;
-        //     layers = <1>;
-        // };
+        back_word {
+            bindings = <&kp LA(BSPC)>;
+            key-positions = <11 13>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
+            layers = <0>;
+        };
+
+        del_word {
+            bindings = <&kp LA(DEL)>;
+            key-positions = <16 18>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
+            layers = <0>;
+        };
+
+        undo {
+            bindings = <&kp LG(Z)>;
+            key-positions = <6 7>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
+            layers = <0>;
+        };
+
+        redo {
+            bindings = <&kp LG(LS(Z))>;
+            key-positions = <7 8>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
+            layers = <0>;
+        };
+
+        // linux combos
+        copy_lin {
+            bindings = <&kp LC(C)>;
+            key-positions = <22 21>;
+            layers = <1>;
+        };
+
+        paste_lin {
+            bindings = <&kp LC(V)>;
+            key-positions = <22 23>;
+            layers = <1>;
+        };
+
+        cut_lin {
+            bindings = <&kp LC(X)>;
+            key-positions = <21 23>;
+            layers = <1>;
+        };
+
+        back_word_lin {
+            bindings = <&kp LC(BSPC)>;
+            key-positions = <11 13>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
+            layers = <1>;
+        };
+
+        del_word_lin {
+            bindings = <&kp LC(DEL)>;
+            key-positions = <16 18>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
+            layers = <1>;
+        };
+
+        undo_lin {
+            bindings = <&kp LC(Z)>;
+            key-positions = <6 7>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
+            layers = <1>;
+        };
+
+        redo_lin {
+            bindings = <&kp LC(Y)>;
+            key-positions = <7 8>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
+            layers = <1>;
+        };
+
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        canary {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  '  | BKSP |
-            // | CTRL |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  | ENT  |
-            // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | SHFT |
-            //                    | GUI | LWR | ESC |   | SPC | RSE  | ALT |
-
-            display-name = "cnr";
+        mac {
+            label = "mac";
             bindings = <
-&kp TAB           &kp J           &kp L         &kp Y         &kp P           &kp K      &kp Z      &kp F           &kp O        &kp U          &kp SQT        &kp BSPC
-&mt LCTRL ESCAPE  &hrm LCTRL C    &hrm LALT R   &hrm LGUI S   &hrs LSHIFT T   &kp G      &kp M      &hrs RSHIFT N   &hrm RGUI E  &hrm RALT I    &hrm RCTRL A   &kp ENTER
-&kp LSHFT         &kp W           &kp Q         &kp V         &kp D           &kp B      &kp X      &kp H           &kp FSLH     &comma         &dot           &kp RSHIFT
-                                                                  &trans    &lhbs 2 0    &shift    &kp ENTER    &ltsp 3 0    &trans
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮                      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  Q       │  W       │  F       │  P       │  B       │                      │  J       │  L       │  U       │  Y       │  '"      │
+             &kp J      &kp L      &kp Y      &kp P      &kp K                             &kp Z      &kp F      &kp O      &kp U      &kp SQT
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  A       │  R       │  S       │  T       │  G       │                      │  M       │  N       │  E       │  I       │  O       │
+        &hrm LCTRL C  &hrm LALT R  &hrm LGUI S  &hrs LSHFT T  &kp G                     &kp M   &hrs RSHFT N  &hrm RGUI E  &hrm RALT I  &hrm RCTRL A
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
+             &kp W      &kp Q      &kp V      &kp D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot    
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                   &trans   &td_shift      &lhbs 2 0                          &ltsp 3 0     &kp ENTER      &trans
+        //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯
             >;
         };
 
-        // TODO: the linux layer hack does not work, as tog layer switches don't persist through power cycles
-        // lin {
-        //
-        //     display-name = "lin";
-        //     bindings = <
-        //       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  
-        //       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  
-        //       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  
-        //                               &trans  &trans  &trans  &trans  &trans  &trans
-        //     >;
-        // };
-
-        qwr {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  '  | ENT  |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
-            //                    | GUI | LWR | ESC |   | SPC | RSE  | ALT |
-
-            display-name = "qwr";
+        linux {
+            label = "lin";
             bindings = <
-&kp TAB           &kp Q           &kp W         &kp E         &kp R          &kp T      &kp Y      &kp U            &kp I        &kp O          &kp P            &kp BSPC
-&mt LCTRL ESCAPE  &hrm LCTRL A    &hrm LALT S   &hrm LGUI D   &hrs LSHIFT F  &kp G      &kp H      &hrs RSHIFT J    &hrm RGUI K  &hrm RALT L    &hrm RCTRL SQT   &kp ENTER
-&kp LSHFT         &kp Z           &kp X         &kp C         &kp V          &kp B      &kp N      &kp M            &comma       &dot           &kp FSLH         &kp RSHIFT
-                                                        &kp LGUI         &mo 2              &bspc    &space  &mo 3               &kp RALT
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮                      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  Q       │  W       │  F       │  P       │  B       │                      │  J       │  L       │  U       │  Y       │  '"      │
+             &kp J      &kp L      &kp Y      &kp P      &kp K                             &kp Z      &kp F      &kp O      &kp U      &kp SQT
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  A       │  R       │  S       │  T       │  G       │                      │  M       │  N       │  E       │  I       │  O       │
+        &hrm LCTRL C  &hrm LALT R  &hrm LGUI S  &hrs LSHFT T  &kp G                     &kp M   &hrs RSHFT N  &hrm RGUI E  &hrm RALT I  &hrm RCTRL A
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
+             &kp W      &kp Q      &kp V      &kp D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot    
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                   &trans   &td_shift      &lhbs 2 0                          &ltsp 3 0     &kp ENTER      &trans
+        //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯
             >;
         };
 
-        sym {
-            // -----------------------------------------------------------------------------------------
-            // |      |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  ~  |  `  |      |
-            // |      |  <  |  [  |  {  |  (  |  \  |   |  |  |  )  |  }  |  ]  |  >  |      |
-            // |      |  \  |  ~  |  `  |  :  |  ;  |   |  _  |  -  |  +  |  =  |  ?  |      |
-            //                    |     |     |     |   | BKSP| TAB |     |
-
-            display-name = "sym";
+        sym_layer {
+            label = "sym";
             bindings = <
-&trans  &kp EXCLAMATION  &kp AT     &kp HASH   &kp DOLLAR  &kp PERCENT    &kp CARET      &kp AMPS   &kp STAR  &kp TILDE  &kp GRAVE         &trans
-&trans &hrm LCTRL LESS_THAN  &hrm LALT LBKT  &hrm LGUI LBRC  &hrs LSHFT LPAR   &kp BSLH  &kp PIPE  &hrs RSHFT RPAR  &hrm RGUI RBRC  &hrm RALT RBKT  &hrm RCTRL GREATER_THAN &trans
-&trans  &kp BSLH     &kp COLON   &kp SEMI    &kp TILDE  &kp GRAVE         &kp UNDER      &kp MINUS  &kp PLUS  &kp EQUAL  &kp QMARK         &trans
-                                    &trans     &trans      &trans         &kp ESC  &kp TAB    &trans
-            >;
-        };
-//TODO: fix below graphic
-        nav {
-            // -----------------------------------------------------------------------------------------
-            // |      |  -  |  7  |  8  |  9  |  ,  |   |PGUP | HME | UP  | END |BKSP  |      |
-            // |      |  0  |  1  |  2  |  3  |  :  |   |PGDWN| LFT | DWN |RGHT | DEL  |      |
-            // |      |  +  |  4  |  5  |  6  |  .  |   |sl 3 |CAPS |CWORD|RSHFT|ORSHFT|      |
-            //                    |     | TAB | ENT |   |     |     |    |
-
-            display-name = "nav";
-            bindings = <
-// consider this config?
-// &trans  &kp STAR      &kp N7  &kp N8  &kp N9  &kp COMMA          &kp INS    &kp HOME    &kp UP    &kp END    &kp PG_UP  &trans
-// &trans  &kp KP_MINUS  &kp N4  &kp N5  &kp N6  &kp DOT            &kp DEL    &kp LEFT    &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
-&trans  &kp KP_MINUS     &kp N7  &kp N8  &kp N9  &kp COMMA          &kp PG_UP  &kp HOME    &kp UP    &kp END    &kp INS    &trans
-&trans  &hrm LCTRL N0 &hrm LALT N1  &hrm LGUI N2  &hrs LSHFT N3  &kp COLON            &kp PG_DN  &kp LEFT    &kp DOWN  &kp RIGHT  &kp DEL    &trans
-&trans  &kp KP_PLUS   &kp N4  &kp N5  &kp N6  &kp DOT            &kp PSCRN  &caps_word  &kp CAPS  &kp RSHFT  &sl 4      &trans
-                              &trans  &kp TAB  &kp ENTER          &trans     &trans      &trans
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  !       │  @       │   #      │    $     │     %    │      │  ^       │   &      │  *       │  ~       │  `       │
+        &kp EXCLAMATION  &kp AT     &kp HASH   &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPS   &kp STAR   &kp TILDE  &kp GRAVE
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  <       │  [       │  {       │  (       │  \       │      │  |       │  )       │  }       │  ]       │  >       │
+        &hrm LCTRL LESS_THAN  &hrm LALT LBKT  &hrm LGUI LBRC  &hrs LSHFT LPAR   &kp BSLH  &kp PIPE  &hrs RSHFT RPAR  &hrm RGUI RBRC  &hrm RALT RBKT  &hrm RCTRL GREATER_THAN
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│   \      │ ~        │ `~       │  "       │ '"       │      │  _       │   -      │  +       │  =       │  ?       │
+        &kp BSLH      &kp COLON   &kp SEMI &kp TILDE  &kp GRAVE         &kp UNDER      &kp MINUS    &kp PLUS    &kp EQUAL  &kp QMARK
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                &bootloader     &trans      &trans         &kp ESC  &kp TAB  &trans
+        //                      ╰──────────┴──────────┴──────────╯      ╰──────────┴──────────┴──────────╯
             >;
         };
 
-        // -----------------------------------------------------------------------------------------
-        // | BT5  | BT1 | BT2 | BT3 | BT4 |BTCLR|   |     |     |     | F11 | F12 |     |
-        // | F12  | F1  | F2  | F3  | F4  | F5  |   | F6  | F7  |  F8 | F9  | F10 | F11 |
-        // |      |     |     |     |     |     |   |     |     |     |     |     |     |
-        //                    |     |     |     |   |     |     |     |
+        nav_layer {
+            label = "nav";
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│    -     │     7    │     8    │     9    │    ,     │      │  PG UP   │  HOME    │    UP    │  END     │   INS    │
+          &kp KP_MINUS    &kp N7      &kp N8      &kp N9   &kp COMMA          &kp PG_UP  &kp HOME    &kp UP     &kp END   &kp INS
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│     0    │     1    │     2    │    3     │    :     │      │  PG DN   │  LEFT    │  DOWN    │  RIGHT   │  DEL     │
+          &hrm LCTRL N0   &hrm LALT N1  &hrm LGUI N2     &hrs LSHFT N3     &kp COLON           &kp PG_DN  &kp LEFT  &kp DOWN    &kp RIGHT   &kp DEL
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│     +    │     4    │     5    │    6     │    .    │      │  PRINT   │CAPS WORD │  CAPS    │  SHIFT   │   SL 3   │
+          &kp KP_PLUS  &kp N4    &kp N5      &kp N6   &kp DOT            &kp PSCRN &caps_word   &kp CAPS &kp RSHFT  &sl 4
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                &trans  &kp TAB     &kp ENTER         &trans      &trans   &sys_reset
+        //                      ╰──────────┴──────────┴──────────╯      ╰──────────┴──────────┴──────────╯
+            >;
+        };
 
         bt {
             display-name = "bt";
             bindings = <
-&trans       &kp F12       &kp F7        &kp F8        &kp F9        &trans        &trans  &trans  &tog 1  &trans  &trans   &trans
-&trans       &kp F11       &kp F4        &kp F5        &kp F6        &trans        &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
-&trans       &kp F10       &kp F1        &kp F2        &kp F3        &trans        &trans  &trans  &trans  &trans  &trans   &trans
-                                         &trans        &trans        &trans        &trans  &trans  &trans
+              // TODO: consider matching the numpad layer in this arrangement
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│    F12   │    F7    │    F8    │    F9    │          │      │          │    mac   │  linux   │          │          │
+           &kp F12    &kp F7     &kp F8     &kp F9       &trans            &trans     &df 0     &df 1      &trans     &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│    F11   │    F4    │    F5    │    F6    │          │      │          │          │          │          │          │
+           &kp F11    &kp F4     &kp F5     &kp F6       &trans         &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│    F10   │    F1    │    F2    │    F3    │          │      │          │          │          │          │          │
+           &kp F10    &kp F1     &kp F2     &kp F3       &trans            &trans     &trans     &trans     &trans     &trans
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                   &trans     &trans     &trans            &trans     &trans     &trans
+        //                      ╰──────────┴──────────┴──────────╯      ╰──────────┴──────────┴──────────╯
             >;
         };
     };
-
-    conditional_layers { compatible = "zmk,conditional-layers"; };
 };

@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-/* #include "key_labels/" */
+#include "key_labels/36.h"
 #include "includes/superset.dtsi"
 /* #include <behaviors.dtsi> */
 /* #include <dt-bindings/zmk/keys.h> */

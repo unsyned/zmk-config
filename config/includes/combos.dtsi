@@ -1,0 +1,148 @@
+/* KEY POSITIONS (using keypos_def helpers)
+╭─────────────────────┬─────────────────────╮
+│ LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4 │
+│ LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4 │
+│ LB4 LB3 LB2 LB1 LB0 │ RB0 RB1 RB2 RB3 RB4 │
+╰───────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────╯
+        ╰─────────────┴─────────────╯       */
+/ {
+  combos {
+      compatible = "zmk,combos";
+
+      escape {
+          bindings = <&kp ESC>;
+          key-positions = <LM3 LM2>;
+          require-prior-idle-ms = <40>;
+          timeout-ms = <25>;
+          // layers = <0 1>;
+      };
+
+      enter {
+          bindings = <&kp ENTER>;
+          key-positions = <RM2 RM3>;
+          // key-positions = <27 28>;
+          require-prior-idle-ms = <40>;
+          timeout-ms = <20>;
+      };
+
+      tab {
+          bindings = <&kp TAB>;
+          key-positions = <LM2 LM1>;
+          require-prior-idle-ms = <40>;
+          timeout-ms = <20>;
+      };
+
+      caps {
+          bindings = <&kp CAPS>;
+          key-positions = <RT1 RT2 RT3>;
+          require-prior-idle-ms = <40>;
+          timeout-ms = <20>;
+      };
+
+      // add hold tap for the function/bt/volume layer
+
+      //*** OS specific combos ***//
+      // mac combos
+      copy {
+          bindings = <&kp LG(C)>;
+          key-positions = <LB3 LB2>;
+          layers = <0>;
+      };
+
+      paste {
+          bindings = <&kp LG(V)>;
+          key-positions = <LB2 LB1>;
+          layers = <0>;
+      };
+
+      cut {
+          bindings = <&kp LG(X)>;
+          key-positions = <LB3 LB1>;
+          layers = <0>;
+      };
+
+      back_word {
+          bindings = <&kp LA(BSPC)>;
+          key-positions = <LM3 LM1>;
+          require-prior-idle-ms = <50>;
+          timeout-ms = <20>;
+          layers = <0>;
+      };
+
+      del_word {
+          bindings = <&kp LA(DEL)>;
+          key-positions = <RM1 RM3>;
+          require-prior-idle-ms = <50>;
+          timeout-ms = <20>;
+          layers = <0>;
+      };
+
+      undo {
+          bindings = <&kp LG(Z)>;
+          key-positions = <RT1 RT2>;
+          require-prior-idle-ms = <50>;
+          timeout-ms = <20>;
+          layers = <0>;
+      };
+
+      redo {
+          bindings = <&kp LG(LS(Z))>;
+          key-positions = <RT2 RT3>;
+          require-prior-idle-ms = <50>;
+          timeout-ms = <20>;
+          layers = <0>;
+      };
+
+      // linux combos
+      copy_lin {
+          bindings = <&kp LC(C)>;
+          key-positions = <LB3 LB2>;
+          layers = <1>;
+      };
+
+      paste_lin {
+          bindings = <&kp LC(V)>;
+          key-positions = <LB2 LB1>;
+          layers = <1>;
+      };
+
+      cut_lin {
+          bindings = <&kp LC(X)>;
+          key-positions = <LB3 LB1>;
+          layers = <1>;
+      };
+
+      back_word_lin {
+          bindings = <&kp LC(BSPC)>;
+          key-positions = <LM3 LM1>;
+          require-prior-idle-ms = <50>;
+          timeout-ms = <20>;
+          layers = <1>;
+      };
+
+      del_word_lin {
+          bindings = <&kp LC(DEL)>;
+          key-positions = <RM1 RM3>;
+          require-prior-idle-ms = <50>;
+          timeout-ms = <20>;
+          layers = <1>;
+      };
+
+      undo_lin {
+          bindings = <&kp LC(Z)>;
+          key-positions = <RT1 RT2>;
+          require-prior-idle-ms = <50>;
+          timeout-ms = <20>;
+          layers = <1>;
+      };
+
+      redo_lin {
+          bindings = <&kp LC(Y)>;
+          key-positions = <RT2 RT3>;
+          require-prior-idle-ms = <50>;
+          timeout-ms = <20>;
+          layers = <1>;
+      };
+
+  };
+}

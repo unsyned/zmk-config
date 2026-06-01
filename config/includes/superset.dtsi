@@ -100,9 +100,10 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_HOLD_BSPC_OVERRIDE";
             /* bindings = <&mo>, <&bspc>; */
-            bindings = <&mo>, <&kp bspc>;
-
             #binding-cells = <2>;
+            bindings = <&mo>, <&kp BSPC>;
+
+            #binding-cells = <1>;
             tapping-term-ms = <200>;
         };
 
@@ -119,9 +120,10 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_SPACE_OVERRIDE";
             /* bindings = <&mo>, <&space>; */
-            bindings = <&mo>, <&kp space>;
+            /* #binding-cells = <2>; */
+            bindings = <&mo>, <&kp SPACE>;
 
-            #binding-cells = <2>;
+            #binding-cells = <1>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
@@ -163,7 +165,7 @@
              &kp J,      &kp L,      &kp Y,      &kp P,      &kp K,                             &kp Z,      &kp F,      &kp O,      &kp U,      &kp SQT, \
         &hrm LCTRL C,  &hrm LALT R,  &hrm LGUI S,  &hrs LSHFT T,  &kp G,                     &kp M,   &hrs RSHFT N,  &hrm RGUI E,  &hrm RALT I,  &hrm RCTRL A, \
              &kp W,      &kp Q,      &kp V,      &kp D,      &kp B,                             &kp X,      &kp H,      &kp FSLH,   &comma,  &dot, \
-                                   &trans,   &td_shift,      &lhbs 2 0,                          &ltsp 3 0,     &kp ENTER,      &trans
+                                   &trans,   &td_shift,      &lhbs 2,                          &ltsp 3,     &kp ENTER,      &trans
             )>;
         };
 
@@ -173,7 +175,7 @@
              &kp J,      &kp L,      &kp Y,      &kp P,      &kp K,                             &kp Z,      &kp F,      &kp O,      &kp U,      &kp SQT, \
              &hrm LCTRL C,  &hrm LALT R,  &hrm LGUI S,  &hrs LSHFT T,  &kp G,                     &kp M,   &hrs RSHFT N,  &hrm RGUI E,  &hrm RALT I,  &hrm RCTRL A, \
              &kp W,      &kp Q,      &kp V,      &kp D,      &kp B,                             &kp X,      &kp H,      &kp FSLH,   &comma,  &dot, \
-                                   &trans,   &td_shift,      &lhbs 2 0,                          &ltsp 3 0,     &kp ENTER,      &trans
+                                   &trans,   &td_shift,      &lhbs 2,                          &ltsp 3,     &kp ENTER,      &trans
             )>;
         };
 

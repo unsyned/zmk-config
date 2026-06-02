@@ -82,7 +82,8 @@
         lhbs: layer_hold_bspc_override {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_HOLD_BSPC_OVERRIDE";
-            bindings = <&mo>, <&bspc>;
+            /* bindings = <&mo>, <&bspc>; */
+            bindings = <&mo>, <&kp BSPC>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -100,7 +101,7 @@
         ltsp: layer_tap_space_override {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_SPACE_OVERRIDE";
-            bindings = <&mo>, <&space>;
+            bindings = <&mo>, <&kp SPACE>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;

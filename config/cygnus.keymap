@@ -83,7 +83,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_HOLD_BSPC_OVERRIDE";
             /* bindings = <&mo>, <&bspc>; */
-            bindings = <&mo>, <&kp BSPC>;
+            bindings = <&mo &kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -101,7 +101,7 @@
         ltsp: layer_tap_space_override {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_SPACE_OVERRIDE";
-            bindings = <&mo>, <&kp SPACE>;
+            bindings = <&mo &kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -281,7 +281,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
              &kp W      &kp Q      &kp V      &kp D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot    
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                   &trans   &td_shift      &lhbs 2 0                          &ltsp 3 0     &kp ENTER      &trans
+                                   &trans   &td_shift      &lhbs 2 BSPC                          &ltsp 3 SPACE     &kp ENTER      &trans
         //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯
             >;
         };
@@ -299,7 +299,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
              &kp W      &kp Q      &kp V      &kp D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot    
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                   &trans   &td_shift      &lhbs 2 0                          &ltsp 3 0     &kp ENTER      &trans
+                                   &trans   &td_shift      &lhbs 2 BSPC                          &ltsp 3 SPACE     &kp ENTER      &trans
         //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯
             >;
         };

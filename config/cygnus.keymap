@@ -18,10 +18,20 @@
 
 / {
     behaviors {
+        // sticky that applies just before the next keystroke
+        skq: sticky_key_quick_release {
+          compatible = "zmk,behavior-sticky-key";
+          #binding-cells = <1>;
+          bindings = <&kp>;
+          release-after-ms = <1000>;
+          quick-release;
+          ignore-modifiers;
+        };
+
         shift: hold_tap_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP_SHIFT";
-            bindings = <&kp>, <&sk>;
+            bindings = <&kp>, <&skq>;
 
             #binding-cells = <2>;
             tapping-term-ms = <150>;
@@ -155,7 +165,7 @@
 
         caps {
             bindings = <&kp CAPS>;
-            key-positions = <6 9>;
+            key-positions = <7 8 9>;
             require-prior-idle-ms = <40>;
             timeout-ms = <20>;
         };

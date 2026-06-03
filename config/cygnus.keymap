@@ -25,7 +25,8 @@
           bindings = <&kp>;
           release-after-ms = <1000>;
           quick-release;
-          ignore-modifiers;
+          /* ignore-modifiers; */
+          // this was wrapping my semi colon override in another shift, causing colon
         };
 
         shift: hold_tap_shift {
@@ -65,7 +66,6 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <150>;
-            hold-while-undecided;
             flavor = "balanced";
         };
 

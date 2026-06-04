@@ -23,8 +23,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include "elpekenin/behaviors.dtsi"
 
-#include "combos.dtsi"
-
 // TODO: remember to put this in the board keymap file
 /* / { */
 /*   chosen { */
@@ -99,8 +97,7 @@
         lhbs: layer_hold_bspc_override {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_HOLD_BSPC_OVERRIDE";
-            /* bindings = <&mo>, <&bspc>; */
-            bindings = <&mo>, <&kp bspc>;
+            bindings = <&mo>, <&bspc>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -118,8 +115,7 @@
         ltsp: layer_tap_space_override {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_SPACE_OVERRIDE";
-            /* bindings = <&mo>, <&space>; */
-            bindings = <&mo>, <&kp space>;
+            bindings = <&mo>, <&space>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -143,6 +139,144 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        escape {
+            bindings = <&kp ESC>;
+            key-positions = <11 12>;
+            require-prior-idle-ms = <40>;
+            timeout-ms = <25>;
+            // layers = <0 1>;
+        };
+
+        enter {
+            bindings = <&kp ENTER>;
+            key-positions = <17 18>;
+            // key-positions = <27 28>;
+            require-prior-idle-ms = <40>;
+            timeout-ms = <20>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <12 13>;
+            require-prior-idle-ms = <40>;
+            timeout-ms = <20>;
+        };
+
+        caps {
+            bindings = <&kp CAPS>;
+            key-positions = <6 9>;
+            require-prior-idle-ms = <40>;
+            timeout-ms = <20>;
+        };
+
+        //*** OS specific combos ***//
+        // mac combos
+        copy {
+            bindings = <&kp LG(C)>;
+            key-positions = <22 21>;
+            layers = <0>;
+        };
+
+        paste {
+            bindings = <&kp LG(V)>;
+            key-positions = <22 23>;
+            layers = <0>;
+        };
+
+        cut {
+            bindings = <&kp LG(X)>;
+            key-positions = <21 23>;
+            layers = <0>;
+        };
+
+        back_word {
+            bindings = <&kp LA(BSPC)>;
+            key-positions = <11 13>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
+            layers = <0>;
+        };
+
+        del_word {
+            bindings = <&kp LA(DEL)>;
+            key-positions = <16 18>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
+            layers = <0>;
+        };
+
+        undo {
+            bindings = <&kp LG(Z)>;
+            key-positions = <6 7>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
+            layers = <0>;
+        };
+
+        redo {
+            bindings = <&kp LG(LS(Z))>;
+            key-positions = <7 8>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
+            layers = <0>;
+        };
+
+        // linux combos
+        copy_lin {
+            bindings = <&kp LC(C)>;
+            key-positions = <22 21>;
+            layers = <1>;
+        };
+
+        paste_lin {
+            bindings = <&kp LC(V)>;
+            key-positions = <22 23>;
+            layers = <1>;
+        };
+
+        cut_lin {
+            bindings = <&kp LC(X)>;
+            key-positions = <21 23>;
+            layers = <1>;
+        };
+
+        back_word_lin {
+            bindings = <&kp LC(BSPC)>;
+            key-positions = <11 13>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
+            layers = <1>;
+        };
+
+        del_word_lin {
+            bindings = <&kp LC(DEL)>;
+            key-positions = <16 18>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
+            layers = <1>;
+        };
+
+        undo_lin {
+            bindings = <&kp LC(Z)>;
+            key-positions = <6 7>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
+            layers = <1>;
+        };
+
+        redo_lin {
+            bindings = <&kp LC(Y)>;
+            key-positions = <7 8>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <20>;
+            layers = <1>;
+        };
+
     };
 
     keymap {

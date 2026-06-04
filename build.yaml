@@ -58,12 +58,12 @@ include:
   # - board: le_jlwffre
     # shield: settings_reset
   # zen
-  # - board: corneish_zen_v2_left
-  #   artifact-name: zen_left
-  # - board: corneish_zen_v2_right
-  #   artifact-name: zen_right
-  # - board: corneish_zen_v2_left
-  #   shield: settings_reset
-  #   artifact-name: zen_reset
+  - board: corneish_zen_v2_left
+    artifact-name: zen_left
+  - board: corneish_zen_v2_right
+    artifact-name: zen_right
+  - board: corneish_zen_v2_left
+    shield: settings_reset
+    artifact-name: zen_reset
   # - board: corneish_zen_v2_right
   #   shield: settings_reset

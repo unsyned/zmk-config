@@ -23,7 +23,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include "elpekenin/behaviors.dtsi"
 
-// TODO: remember to put this in the board keymap file
+// NOTE: remember to put this in the board keymap file
 /* / { */
 /*   chosen { */
 /*     //zmk,matrix_transform = &default_transform; */
@@ -33,10 +33,21 @@
 
 / {
     behaviors {
+        // sticky that applies just before the next keystroke
+        skq: sticky_key_quick_release {
+          compatible = "zmk,behavior-sticky-key";
+          #binding-cells = <1>;
+          bindings = <&kp>;
+          release-after-ms = <1000>;
+          quick-release;
+          /* ignore-modifiers; */
+          // this was wrapping my semi colon override in another shift, causing colon
+        };
+
         shift: hold_tap_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP_SHIFT";
-            bindings = <&kp>, <&sk>;
+            bindings = <&kp>, <&skq>;
 
             #binding-cells = <2>;
             tapping-term-ms = <150>;
@@ -97,7 +108,8 @@
         lhbs: layer_hold_bspc_override {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_HOLD_BSPC_OVERRIDE";
-            bindings = <&mo>, <&bspc>;
+            /* bindings = <&mo>, <&bspc>; */
+            bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -115,7 +127,7 @@
         ltsp: layer_tap_space_override {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_SPACE_OVERRIDE";
-            bindings = <&mo>, <&space>;
+            bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -128,7 +140,7 @@
             bindings = <&kp COMMA>, <&kp SEMI>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         dot: dot_colon_on_shift {
@@ -137,7 +149,17 @@
             bindings = <&kp DOT>, <&kp COLON>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        lp: long_press {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_SHIFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "balanced";
         };
     };
 
@@ -169,30 +191,30 @@
 
         caps {
             bindings = <&kp CAPS>;
-            key-positions = <6 9>;
+            key-positions = <6 7 8>;
             require-prior-idle-ms = <40>;
             timeout-ms = <20>;
         };
 
         //*** OS specific combos ***//
         // mac combos
-        copy {
-            bindings = <&kp LG(C)>;
-            key-positions = <22 21>;
-            layers = <0>;
-        };
-
-        paste {
-            bindings = <&kp LG(V)>;
-            key-positions = <22 23>;
-            layers = <0>;
-        };
-
-        cut {
-            bindings = <&kp LG(X)>;
-            key-positions = <21 23>;
-            layers = <0>;
-        };
+        /* copy { */
+        /*     bindings = <&kp LG(C)>; */
+        /*     key-positions = <22 21>; */
+        /*     layers = <0>; */
+        /* }; */
+        /**/
+        /* paste { */
+        /*     bindings = <&kp LG(V)>; */
+        /*     key-positions = <22 23>; */
+        /*     layers = <0>; */
+        /* }; */
+        /**/
+        /* cut { */
+        /*     bindings = <&kp LG(X)>; */
+        /*     key-positions = <21 23>; */
+        /*     layers = <0>; */
+        /* }; */
 
         back_word {
             bindings = <&kp LA(BSPC)>;
@@ -227,23 +249,23 @@
         };
 
         // linux combos
-        copy_lin {
-            bindings = <&kp LC(C)>;
-            key-positions = <22 21>;
-            layers = <1>;
-        };
-
-        paste_lin {
-            bindings = <&kp LC(V)>;
-            key-positions = <22 23>;
-            layers = <1>;
-        };
-
-        cut_lin {
-            bindings = <&kp LC(X)>;
-            key-positions = <21 23>;
-            layers = <1>;
-        };
+        /* copy_lin { */
+        /*     bindings = <&kp LC(C)>; */
+        /*     key-positions = <22 21>; */
+        /*     layers = <1>; */
+        /* }; */
+        /**/
+        /* paste_lin { */
+        /*     bindings = <&kp LC(V)>; */
+        /*     key-positions = <22 23>; */
+        /*     layers = <1>; */
+        /* }; */
+        /**/
+        /* cut_lin { */
+        /*     bindings = <&kp LC(X)>; */
+        /*     key-positions = <21 23>; */
+        /*     layers = <1>; */
+        /* }; */
 
         back_word_lin {
             bindings = <&kp LC(BSPC)>;
@@ -293,11 +315,12 @@
             //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
             //                      │          │          │          │     │          │          │          │
             //                      ╰──────────┴──────────┴──────────╯     ╰──────────┴──────────┴──────────╯
+
             bindings = <LAYER_FROM36( \
-             &kp J,      &kp L,      &kp Y,      &kp P,      &kp K,                             &kp Z,      &kp F,      &kp O,      &kp U,      &kp SQT, \
-        &hrm LCTRL C,  &hrm LALT R,  &hrm LGUI S,  &hrs LSHFT T,  &kp G,                     &kp M,   &hrs RSHFT N,  &hrm RGUI E,  &hrm RALT I,  &hrm RCTRL A, \
-             &kp W,      &kp Q,      &kp V,      &kp D,      &kp B,                             &kp X,      &kp H,      &kp FSLH,   &comma,  &dot, \
-                                   &trans,   &td_shift,      &lhbs 2 0,                          &ltsp 3 0,     &kp ENTER,      &trans
+             &kp J,      &kp L,      &kp Y,      &kp P,      &kp K,                              &kp Z,      &kp F,      &kp O,      &kp U,      &kp SQT, \
+        &hrm LCTRL C,  &hrm LALT R,  &hrm LGUI S,  &hrs LSHFT T,  &kp G,                         &kp M,   &hrs RSHFT N,  &hrm RGUI E,  &hrm RALT I,  &hrm RCTRL A, \
+             &kp W,    &lp LG(X) Q,  &lp LG(C) V,  &lp LG(V) D,   &kp B,                         &kp X,         &kp H,          &kp FSLH,   &comma,  &dot, \
+                                   &trans,   &td_shift,       &lhbs 2 BSPC,                      &ltsp 3 SPACE,     &kp ENTER,      &trans
             )>;
         };
 
@@ -306,8 +329,8 @@
             bindings = <LAYER_FROM36( \
              &kp J,      &kp L,      &kp Y,      &kp P,      &kp K,                             &kp Z,      &kp F,      &kp O,      &kp U,      &kp SQT, \
              &hrm LCTRL C,  &hrm LALT R,  &hrm LGUI S,  &hrs LSHFT T,  &kp G,                     &kp M,   &hrs RSHFT N,  &hrm RGUI E,  &hrm RALT I,  &hrm RCTRL A, \
-             &kp W,      &kp Q,      &kp V,      &kp D,      &kp B,                             &kp X,      &kp H,      &kp FSLH,   &comma,  &dot, \
-                                   &trans,   &td_shift,      &lhbs 2 0,                          &ltsp 3 0,     &kp ENTER,      &trans
+             &kp W,      &lp LG(X) Q, &lp LG(C) V, &lp LG(V) D,      &kp B,                             &kp X,      &kp H,      &kp FSLH,   &comma,  &dot, \
+                                   &trans,   &td_shift,       &lhbs 2 BSPC,                          &ltsp 3 SPACE,     &kp ENTER,      &trans
             )>;
         };
 
@@ -327,7 +350,7 @@
               &kp EXCLAMATION,  &kp AT,     &kp HASH,   &kp DOLLAR,  &kp PERCENT,    &kp CARET,  &kp AMPS,   &kp STAR,   &kp TILDE,  &kp GRAVE, \
               &hrm LCTRL LESS_THAN,  &hrm LALT LBKT,  &hrm LGUI LBRC,  &hrs LSHFT LPAR,   &kp BSLH,  &kp PIPE,  &hrs RSHFT RPAR,  &hrm RGUI RBRC,  &hrm RALT RBKT,  &hrm RCTRL GREATER_THAN, \
               &kp BSLH,      &kp COLON,   &kp SEMI, &kp TILDE,  &kp GRAVE,         &kp UNDER,      &kp MINUS,    &kp PLUS,    &kp EQUAL,  &kp QMARK, \
-                                      &bootloader,     &trans,      &trans,         &kp ESC,  &kp TAB,  &trans
+                                      &bootloader,     &trans,      &trans,         &kp ESC,  &kp DEL,  &trans
             )>;
         };
 
@@ -360,6 +383,8 @@
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                      │          │          │          │      │          │          │          │
         //                      ╰──────────┴──────────┴──────────╯      ╰──────────┴──────────┴──────────╯
+        // TODO: create a pinky layer tap on period to get to function layer
+        // TODO: create a pinky layer tap on W to get to bt/lighting/system layer
             display-name = "bt";
             bindings = <LAYER_FROM36( \
                &kp F12,    &kp F7,     &kp F8,     &kp F9,       &trans,            &trans,     &df 0,     &df 1,      &trans,     &trans, \

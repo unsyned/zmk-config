@@ -5,7 +5,7 @@
  */
 
 #include "key_labels/36.h"
-#include "includes/superset.dtsi"
+#include "includes/core.dtsi"
 /* #include <behaviors.dtsi> */
 /* #include <dt-bindings/zmk/keys.h> */
 /* #include <dt-bindings/zmk/bt.h> */

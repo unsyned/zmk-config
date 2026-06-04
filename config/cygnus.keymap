@@ -136,6 +136,36 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        cpy: copy_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_SHIFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "balanced";
+        };
+
+        cut: cut_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_SHIFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "balanced";
+        };
+
+        pst: paste_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_SHIFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "balanced";
+        };
     };
 
     combos {
@@ -173,23 +203,23 @@
 
         //*** OS specific combos ***//
         // mac combos
-        copy {
-            bindings = <&kp LG(C)>;
-            key-positions = <22 21>;
-            layers = <0>;
-        };
-
-        paste {
-            bindings = <&kp LG(V)>;
-            key-positions = <22 23>;
-            layers = <0>;
-        };
-
-        cut {
-            bindings = <&kp LG(X)>;
-            key-positions = <21 23>;
-            layers = <0>;
-        };
+        /* copy { */
+        /*     bindings = <&kp LG(C)>; */
+        /*     key-positions = <22 21>; */
+        /*     layers = <0>; */
+        /* }; */
+        /**/
+        /* paste { */
+        /*     bindings = <&kp LG(V)>; */
+        /*     key-positions = <22 23>; */
+        /*     layers = <0>; */
+        /* }; */
+        /**/
+        /* cut { */
+        /*     bindings = <&kp LG(X)>; */
+        /*     key-positions = <21 23>; */
+        /*     layers = <0>; */
+        /* }; */
 
         back_word {
             bindings = <&kp LA(BSPC)>;
@@ -224,23 +254,23 @@
         };
 
         // linux combos
-        copy_lin {
-            bindings = <&kp LC(C)>;
-            key-positions = <22 21>;
-            layers = <1>;
-        };
-
-        paste_lin {
-            bindings = <&kp LC(V)>;
-            key-positions = <22 23>;
-            layers = <1>;
-        };
-
-        cut_lin {
-            bindings = <&kp LC(X)>;
-            key-positions = <21 23>;
-            layers = <1>;
-        };
+        /* copy_lin { */
+        /*     bindings = <&kp LC(C)>; */
+        /*     key-positions = <22 21>; */
+        /*     layers = <1>; */
+        /* }; */
+        /**/
+        /* paste_lin { */
+        /*     bindings = <&kp LC(V)>; */
+        /*     key-positions = <22 23>; */
+        /*     layers = <1>; */
+        /* }; */
+        /**/
+        /* cut_lin { */
+        /*     bindings = <&kp LC(X)>; */
+        /*     key-positions = <21 23>; */
+        /*     layers = <1>; */
+        /* }; */
 
         back_word_lin {
             bindings = <&kp LC(BSPC)>;
@@ -290,7 +320,7 @@
         &hrm LCTRL C  &hrm LALT R  &hrm LGUI S  &hrs LSHFT T  &kp G                     &kp M   &hrs RSHFT N  &hrm RGUI E  &hrm RALT I  &hrm RCTRL A
         //├──────────┼──────────┼──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
-             &kp W      &kp Q      &kp V      &kp D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot    
+             &kp W      &cut LG(X) Q      &cpy LG(C) V      &pst LG(V) D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                    &trans   &td_shift      &lhbs 2 BSPC                          &ltsp 3 SPACE     &kp ENTER      &trans
         //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯
@@ -308,7 +338,7 @@
         &hrm LCTRL C  &hrm LALT R  &hrm LGUI S  &hrs LSHFT T  &kp G                     &kp M   &hrs RSHFT N  &hrm RGUI E  &hrm RALT I  &hrm RCTRL A
         //├──────────┼──────────┼──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
-             &kp W      &kp Q      &kp V      &kp D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot    
+             &kp W      &cut LC(X) Q      &cpy LC(C) V      &pst LC(V) D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                    &trans   &td_shift      &lhbs 2 BSPC                          &ltsp 3 SPACE     &kp ENTER      &trans
         //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯

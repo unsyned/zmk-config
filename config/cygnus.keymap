@@ -137,27 +137,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        cpy: copy_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_SHIFT";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            flavor = "balanced";
-        };
-
-        cut: cut_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_SHIFT";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            flavor = "balanced";
-        };
-
-        pst: paste_hold_tap {
+        lp: long_press {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_SHIFT";
             bindings = <&kp>, <&kp>;
@@ -320,7 +300,7 @@
         &hrm LCTRL C  &hrm LALT R  &hrm LGUI S  &hrs LSHFT T  &kp G                     &kp M   &hrs RSHFT N  &hrm RGUI E  &hrm RALT I  &hrm RCTRL A
         //├──────────┼──────────┼──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
-             &kp W      &cut LG(X) Q      &cpy LG(C) V      &pst LG(V) D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot
+             &kp W    &lp LG(X) Q &lp LG(C) V &lp LG(V) D &kp B                          &kp X      &kp H      &kp FSLH   &comma       &dot
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                    &trans   &td_shift      &lhbs 2 BSPC                          &ltsp 3 SPACE     &kp ENTER      &trans
         //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯
@@ -338,7 +318,7 @@
         &hrm LCTRL C  &hrm LALT R  &hrm LGUI S  &hrs LSHFT T  &kp G                     &kp M   &hrs RSHFT N  &hrm RGUI E  &hrm RALT I  &hrm RCTRL A
         //├──────────┼──────────┼──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  D       │  V       │                      │  K       │  H       │  , ;     │  . :     │  / ?     │
-             &kp W      &cut LC(X) Q      &cpy LC(C) V      &pst LC(V) D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot
+             &kp W      &lp LC(X) Q      &lp LC(C) V      &lp LC(V) D      &kp B                             &kp X      &kp H      &kp FSLH   &comma  &dot
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                    &trans   &td_shift      &lhbs 2 BSPC                          &ltsp 3 SPACE     &kp ENTER      &trans
         //                      ╰──────────┴──────────┴──────────╯                      ╰──────────┴──────────┴──────────╯

@@ -31,6 +31,9 @@
 /*   }; */
 /* }; */
 
+
+// TODO: add layer defs to the layout header files
+
 / {
     behaviors {
         // sticky that applies just before the next keystroke
@@ -168,7 +171,7 @@
 
         escape {
             bindings = <&kp ESC>;
-            key-positions = <11 12>;
+            key-positions = <LM3 LM2>;
             require-prior-idle-ms = <40>;
             timeout-ms = <25>;
             // layers = <0 1>;
@@ -176,7 +179,7 @@
 
         enter {
             bindings = <&kp ENTER>;
-            key-positions = <17 18>;
+            key-positions = <RM2 RM3>;
             // key-positions = <27 28>;
             require-prior-idle-ms = <40>;
             timeout-ms = <20>;
@@ -184,14 +187,14 @@
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <12 13>;
+            key-positions = <LM2 LM1>;
             require-prior-idle-ms = <40>;
             timeout-ms = <20>;
         };
 
         caps {
             bindings = <&kp CAPS>;
-            key-positions = <6 7 8>;
+            key-positions = <RT1 RT2 RT3>;
             require-prior-idle-ms = <40>;
             timeout-ms = <20>;
         };
@@ -200,25 +203,25 @@
         // mac combos
         /* copy { */
         /*     bindings = <&kp LG(C)>; */
-        /*     key-positions = <22 21>; */
+        /*     key-positions = <LB3 LB2>; */
         /*     layers = <0>; */
         /* }; */
         /**/
         /* paste { */
         /*     bindings = <&kp LG(V)>; */
-        /*     key-positions = <22 23>; */
+        /*     key-positions = <LB2 LB1>; */
         /*     layers = <0>; */
         /* }; */
         /**/
         /* cut { */
         /*     bindings = <&kp LG(X)>; */
-        /*     key-positions = <21 23>; */
+        /*     key-positions = <LB3 LB1>; */
         /*     layers = <0>; */
         /* }; */
 
         back_word {
             bindings = <&kp LA(BSPC)>;
-            key-positions = <11 13>;
+            key-positions = <LM3 LM1>;
             require-prior-idle-ms = <50>;
             timeout-ms = <20>;
             layers = <0>;
@@ -226,7 +229,7 @@
 
         del_word {
             bindings = <&kp LA(DEL)>;
-            key-positions = <16 18>;
+            key-positions = <RM1 RM3>;
             require-prior-idle-ms = <50>;
             timeout-ms = <20>;
             layers = <0>;
@@ -234,7 +237,7 @@
 
         undo {
             bindings = <&kp LG(Z)>;
-            key-positions = <6 7>;
+            key-positions = <RT1 RT2>;
             require-prior-idle-ms = <50>;
             timeout-ms = <20>;
             layers = <0>;
@@ -242,7 +245,7 @@
 
         redo {
             bindings = <&kp LG(LS(Z))>;
-            key-positions = <7 8>;
+            key-positions = <RT2 RT3>;
             require-prior-idle-ms = <50>;
             timeout-ms = <20>;
             layers = <0>;
@@ -251,25 +254,25 @@
         // linux combos
         /* copy_lin { */
         /*     bindings = <&kp LC(C)>; */
-        /*     key-positions = <22 21>; */
+        /*     key-positions = <LB3 LB2>; */
         /*     layers = <1>; */
         /* }; */
         /**/
         /* paste_lin { */
         /*     bindings = <&kp LC(V)>; */
-        /*     key-positions = <22 23>; */
+        /*     key-positions = <LB2 LB1>; */
         /*     layers = <1>; */
         /* }; */
         /**/
         /* cut_lin { */
         /*     bindings = <&kp LC(X)>; */
-        /*     key-positions = <21 23>; */
+        /*     key-positions = <LB3 LB1>; */
         /*     layers = <1>; */
         /* }; */
 
         back_word_lin {
             bindings = <&kp LC(BSPC)>;
-            key-positions = <11 13>;
+            key-positions = <LM3 LM1>;
             require-prior-idle-ms = <50>;
             timeout-ms = <20>;
             layers = <1>;
@@ -277,7 +280,7 @@
 
         del_word_lin {
             bindings = <&kp LC(DEL)>;
-            key-positions = <16 18>;
+            key-positions = <RM1 RM3>;
             require-prior-idle-ms = <50>;
             timeout-ms = <20>;
             layers = <1>;
@@ -285,7 +288,7 @@
 
         undo_lin {
             bindings = <&kp LC(Z)>;
-            key-positions = <6 7>;
+            key-positions = <RT1 RT2>;
             require-prior-idle-ms = <50>;
             timeout-ms = <20>;
             layers = <1>;
@@ -293,7 +296,7 @@
 
         redo_lin {
             bindings = <&kp LC(Y)>;
-            key-positions = <7 8>;
+            key-positions = <RT2 RT3>;
             require-prior-idle-ms = <50>;
             timeout-ms = <20>;
             layers = <1>;
@@ -329,7 +332,7 @@
             bindings = <LAYER_FROM36( \
              &kp J,      &kp L,      &kp Y,      &kp P,      &kp K,                             &kp Z,      &kp F,      &kp O,      &kp U,      &kp SQT, \
              &hrm LCTRL C,  &hrm LALT R,  &hrm LGUI S,  &hrs LSHFT T,  &kp G,                     &kp M,   &hrs RSHFT N,  &hrm RGUI E,  &hrm RALT I,  &hrm RCTRL A, \
-             &kp W,      &lp LG(X) Q, &lp LG(C) V, &lp LG(V) D,      &kp B,                             &kp X,      &kp H,      &kp FSLH,   &comma,  &dot, \
+             &kp W,      &lp LC(X) Q, &lp LC(C) V, &lp LC(V) D,      &kp B,                             &kp X,      &kp H,      &kp FSLH,   &comma,  &dot, \
                                    &trans,   &td_shift,       &lhbs 2 BSPC,                          &ltsp 3 SPACE,     &kp ENTER,      &trans
             )>;
         };

@@ -323,8 +323,11 @@
              &kp J,      &kp L,      &kp Y,      &kp P,      &kp K,                              &kp Z,      &kp F,      &kp O,      &kp U,      &kp SQT, \
         &hrm LCTRL C,  &hrm LALT R,  &hrm LGUI S,  &hrs LSHFT T,  &kp G,                         &kp M,   &hrs RSHFT N,  &hrm RGUI E,  &hrm RALT I,  &hrm RCTRL A, \
              &kp W,    &lp LG(X) Q,  &lp LG(C) V,  &lp LG(V) D,   &kp B,                         &kp X,         &kp H,          &kp FSLH,   &comma,  &dot, \
-                                   &trans,   &td_shift,       &lhbs 2 BSPC,                      &ltsp 3 SPACE,     &kp ENTER,      &trans
+                                   &trans,   &td_shift,       &lhbs 2 BSPC,        ENCODER,       &ltsp 3 SPACE,     &kp ENTER,      &trans
             )>;
+            #ifdef ENCODER
+              sensor-bindings = SENSOR_PROPS;
+            #endif
         };
 
         linux {
@@ -333,7 +336,7 @@
              &kp J,      &kp L,      &kp Y,      &kp P,      &kp K,                             &kp Z,      &kp F,      &kp O,      &kp U,      &kp SQT, \
              &hrm LCTRL C,  &hrm LALT R,  &hrm LGUI S,  &hrs LSHFT T,  &kp G,                     &kp M,   &hrs RSHFT N,  &hrm RGUI E,  &hrm RALT I,  &hrm RCTRL A, \
              &kp W,      &lp LC(X) Q, &lp LC(C) V, &lp LC(V) D,      &kp B,                             &kp X,      &kp H,      &kp FSLH,   &comma,  &dot, \
-                                   &trans,   &td_shift,       &lhbs 2 BSPC,                          &ltsp 3 SPACE,     &kp ENTER,      &trans
+                                   &trans,   &td_shift,       &lhbs 2 BSPC,        ENCODER,          &ltsp 3 SPACE,     &kp ENTER,      &trans
             )>;
         };
 
@@ -353,8 +356,11 @@
               &kp EXCLAMATION,  &kp AT,     &kp HASH,   &kp DOLLAR,  &kp PERCENT,    &kp CARET,  &kp AMPS,   &kp STAR,   &kp TILDE,  &kp GRAVE, \
               &hrm LCTRL LESS_THAN,  &hrm LALT LBKT,  &hrm LGUI LBRC,  &hrs LSHFT LPAR,   &kp BSLH,  &kp PIPE,  &hrs RSHFT RPAR,  &hrm RGUI RBRC,  &hrm RALT RBKT,  &hrm RCTRL GREATER_THAN, \
               &kp BSLH,      &kp COLON,   &kp SEMI, &kp TILDE,  &kp GRAVE,         &kp UNDER,      &kp MINUS,    &kp PLUS,    &kp EQUAL,  &kp QMARK, \
-                                      &bootloader,     &trans,      &trans,         &kp ESC,  &kp DEL,  &trans
+                                      &bootloader,     &trans,      &trans,    ENCODER,     &kp ESC,  &kp DEL,  &trans
             )>;
+            #ifdef ENCODER
+              sensor-bindings = SENSOR_PROPS;
+            #endif
         };
 
         nav_layer {
@@ -371,8 +377,11 @@
               &kp KP_MINUS,    &kp N7,      &kp N8,      &kp N9,   &kp COMMA,          &kp PG_UP,  &kp HOME,    &kp UP,     &kp END,   &kp INS, \
               &hrm LCTRL N0,   &hrm LALT N1,  &hrm LGUI N2,     &hrs LSHFT N3,     &kp COLON,           &kp PG_DN,  &kp LEFT,  &kp DOWN,    &kp RIGHT,   &kp DEL, \
               &kp KP_PLUS,  &kp N4,    &kp N5,      &kp N6,   &kp DOT,            &kp PSCRN, &caps_word,   &kp CAPS, &kp RSHFT,  &sl 4, \
-                                    &trans,  &kp TAB,     &kp ENTER,         &trans,      &trans,   &sys_reset
+                                    &trans,  &kp TAB,     &kp ENTER,    ENCODER,     &trans,      &trans,   &sys_reset
             )>;
+            #ifdef ENCODER
+              sensor-bindings = SENSOR_PROPS;
+            #endif
         };
 
         bt {
@@ -393,8 +402,11 @@
                &kp F12,    &kp F7,     &kp F8,     &kp F9,       &trans,            &trans,     &df 0,     &df 1,      &trans,     &trans, \
                &kp F11,    &kp F4,     &kp F5,     &kp F6,       &trans,         &bt BT_CLR, &bt BT_SEL 0, &bt BT_SEL 1, &bt BT_SEL 2, &bt BT_SEL 3, \
                &kp F10,    &kp F1,     &kp F2,     &kp F3,       &trans,            &trans,     &trans,     &trans,     &trans,     &trans, \
-                                       &trans,     &trans,     &trans,            &trans,     &trans,     &trans
+                                       &trans,     &trans,     &trans,     ENCODER,       &trans,     &trans,     &trans
             )>;
+            #ifdef ENCODER
+              sensor-bindings = <SENSOR_PROPS>;
+            #endif
         };
     };
 };

@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
 /* #ifdef ENCODER */
 /*   #define WRAPPED_ENCODER ENCODER "," */
 /*   #ifndef ENCODER &none */
@@ -11,12 +17,12 @@
   #define EXTRA_BINDINGS ""
 #endif
 
-
-/*
- * Copyright (c) 2022 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
+#define MAC 0
+#define LIN 1
+#define SYM 2
+#define NAV 3 // numpad and navigation
+#define SYS 4 // fn, bluetooth, media controls
+// #define mse 5
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -49,7 +55,6 @@
 
         shift: hold_tap_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_TAP_SHIFT";
             bindings = <&kp>, <&skq>;
 
             #binding-cells = <2>;
@@ -59,7 +64,6 @@
 
         td_shift: tap_dance_shift_caps_word {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_SHIFT_CW";
             bindings = <&shift RSHIFT LSHIFT>, <&caps_word>;
 
             #binding-cells = <0>;
@@ -68,18 +72,17 @@
 
         hrm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             require-prior-idle-ms = <125>;
+            quick-tap-term = <150>;
             flavor = "tap-preferred";
         };
 
         hrs: homerow_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_SHIFT";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -89,7 +92,6 @@
 
         lh: layer_hold {
           compatible = "zmk,behavior-hold-tap";
-          label = "LAYER_HOLD";
           bindings = <&mo>, <&kp>;
 
           #binding-cells = <2>;
@@ -99,7 +101,6 @@
 
         bspc: bspc_del_on_shift {
             compatible = "zmk,behavior-mod-morph";
-            label = "BSPC_DEL_ON_SHIFT";
             bindings = <&kp BSPC>, <&kp DEL>;
 
             #binding-cells = <0>;
@@ -110,7 +111,6 @@
         // first param and a dummy value like 0 as second
         lhbs: layer_hold_bspc_override {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_HOLD_BSPC_OVERRIDE";
             /* bindings = <&mo>, <&bspc>; */
             bindings = <&mo>, <&kp>;
 
@@ -120,7 +120,6 @@
 
         space: space_tab_on_shift {
             compatible = "zmk,behavior-mod-morph";
-            label = "SPACE_TAB_ON_SHIFT";
             bindings = <&kp SPACE>, <&kp TAB>;
 
             #binding-cells = <0>;
@@ -129,7 +128,6 @@
 
         ltsp: layer_tap_space_override {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_SPACE_OVERRIDE";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -139,7 +137,6 @@
 
         comma: comma_semicolon_on_shift {
             compatible = "zmk,behavior-mod-morph";
-            label = "COMMA_SEMICOLON_ON_SHIFT";
             bindings = <&kp COMMA>, <&kp SEMI>;
 
             #binding-cells = <0>;
@@ -148,7 +145,6 @@
 
         dot: dot_colon_on_shift {
             compatible = "zmk,behavior-mod-morph";
-            label = "DOT_COLON_ON_SHIFT";
             bindings = <&kp DOT>, <&kp COLON>;
 
             #binding-cells = <0>;
@@ -157,7 +153,6 @@
 
         lp: long_press {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_SHIFT";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -195,6 +190,13 @@
         caps {
             bindings = <&kp CAPS>;
             key-positions = <RT1 RT2 RT3>;
+            require-prior-idle-ms = <40>;
+            timeout-ms = <20>;
+        };
+
+        sl_sys {
+            bindings = <&sl SYS>;
+            key-positions = <LT1 LT2 LT3>;
             require-prior-idle-ms = <40>;
             timeout-ms = <20>;
         };
@@ -310,11 +312,11 @@
         mac {
             label = "mac";
             //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            //│  Q       │  W       │  F       │  P       │  B       │     │  J       │  L       │  U       │  Y       │  '"      │
+            //│  J       │  L       │  Y       │  P       │  K       │     │  Z       │  F       │  O       │  U       │  '"      │
             //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            //│  A       │  R       │  S       │  T       │  G       │     │  M       │  N       │  E       │  I       │  O       │
+            //│  C       │  R       │  S       │  T       │  G       │     │  M       │  N       │  E       │  I       │  A       │
             //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            //│  Z       │  X       │  C       │  D       │  V       │     │  K       │  H       │  , ;     │  . :     │  / ?     │
+            //│  W       │  Q       │  V       │  D       │  B       │     │  X       │  H       │  / ?     │   , ;    │  . :     │
             //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
             //                      │          │          │          │     │          │          │          │
             //                      ╰──────────┴──────────┴──────────╯     ╰──────────┴──────────┴──────────╯
@@ -323,21 +325,21 @@
              &kp J,      &kp L,      &kp Y,      &kp P,      &kp K,                              &kp Z,      &kp F,      &kp O,      &kp U,      &kp SQT, \
         &hrm LCTRL C,  &hrm LALT R,  &hrm LGUI S,  &hrs LSHFT T,  &kp G,                         &kp M,   &hrs RSHFT N,  &hrm RGUI E,  &hrm RALT I,  &hrm RCTRL A, \
              &kp W,    &lp LG(X) Q,  &lp LG(C) V,  &lp LG(V) D,   &kp B,                         &kp X,         &kp H,          &kp FSLH,   &comma,  &dot, \
-                                   &trans,   &td_shift,       &lhbs 2 BSPC,                      &ltsp 3 SPACE,     &kp ENTER,      &trans
+                                   &trans,   &td_shift,       &lhbs SYM BSPC,                      &ltsp NAV SPACE,     &kp ENTER,      &trans
             )>;
         };
 
-        linux {
+        lin {
             label = "lin";
             bindings = <LAYER_FROM36( \
-             &kp J,      &kp L,      &kp Y,      &kp P,      &kp K,                             &kp Z,      &kp F,      &kp O,      &kp U,      &kp SQT, \
-             &hrm LCTRL C,  &hrm LALT R,  &hrm LGUI S,  &hrs LSHFT T,  &kp G,                     &kp M,   &hrs RSHFT N,  &hrm RGUI E,  &hrm RALT I,  &hrm RCTRL A, \
-             &kp W,      &lp LC(X) Q, &lp LC(C) V, &lp LC(V) D,      &kp B,                             &kp X,      &kp H,      &kp FSLH,   &comma,  &dot, \
-                                   &trans,   &td_shift,       &lhbs 2 BSPC,                          &ltsp 3 SPACE,     &kp ENTER,      &trans
+             &trans,      &trans,      &trans,      &trans,      &trans,                             &trans,      &trans,      &trans,      &trans,      &trans, \
+             &trans,  &trans,  &trans,  &trans,  &trans,                     &trans,   &trans,  &trans,  &trans,  &trans, \
+             &trans,      &lp LC(X) Q, &lp LC(C) V, &lp LC(V) D,      &trans,                             &trans,      &trans,      &trans,   &trans,  &trans, \
+                                   &trans,   &trans,       &trans,                          &trans,     &trans,      &trans
             )>;
         };
 
-        sym_layer {
+        sym {
             label = "sym";
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  !       │  @       │   #      │    $     │     %    │      │  ^       │   &      │  *       │  ~       │  `       │
@@ -357,25 +359,26 @@
             )>;
         };
 
-        nav_layer {
+        nav {
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│    -     │     7    │     8    │     9    │    ,     │      │  PG UP   │  HOME    │    UP    │  END     │   INS    │
+        //│    -     │     7    │     8    │     9    │    ,     │      │  INS     │  HOME    │    UP    │  END     │  PG UP   │
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│     0    │     1    │     2    │    3     │    :     │      │  PG DN   │  LEFT    │  DOWN    │  RIGHT   │  DEL     │
+        //│     0    │     1    │     2    │    3     │    :     │      │   DEL    │  LEFT    │  DOWN    │  RIGHT   │  PG DN   │
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│     +    │     4    │     5    │    6     │    .     │      │  PRINT   │CAPS WORD │  CAPS    │  SHIFT   │   SL 3   │
+        //│     +    │     4    │     5    │    6     │    .     │      │  PRINT   │  VOL UP  │    ⏯     │  VOL DN  │   SHIFT  │
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                      │          │          │          │      │          │          │          │
         //                      ╰──────────┴──────────┴──────────╯      ╰──────────┴──────────┴──────────╯
             label = "nav";
             bindings = <LAYER_FROM36( \
-              &kp KP_MINUS,    &kp N7,      &kp N8,      &kp N9,   &kp COMMA,          &kp PG_UP,  &kp HOME,    &kp UP,     &kp END,   &kp INS, \
-              &hrm LCTRL N0,   &hrm LALT N1,  &hrm LGUI N2,     &hrs LSHFT N3,     &kp COLON,           &kp PG_DN,  &kp LEFT,  &kp DOWN,    &kp RIGHT,   &kp DEL, \
-              &kp KP_PLUS,  &kp N4,    &kp N5,      &kp N6,   &kp DOT,            &kp PSCRN, &caps_word,   &kp CAPS, &kp RSHFT,  &sl 4, \
+              &kp KP_MINUS,    &kp N7,      &kp N8,      &kp N9,   &kp COMMA,          &kp INS,  &kp HOME,    &kp UP,     &kp END,   &kp PG_UP, \
+              &hrm LCTRL N0,   &hrm LALT N1,  &hrm LGUI N2,     &hrs LSHFT N3,     &kp COLON,           &kp DEL,  &hrm RSHFT LEFT,  &hrm RGUI DOWN,    &hrm RALT RIGHT,   &hrm RCTRL PG_DN, \
+              &kp KP_PLUS,  &kp N4,    &kp N5,      &kp N6,   &kp DOT,            &kp PSCRN, &kp C_VOL_UP,   &lp C_MUTE C_PLAY_PAUSE, &kp C_VOL_DN,  &kp RSHFT, \
                                     &trans,  &kp TAB,     &kp ENTER,         &trans,      &trans,   &sys_reset
             )>;
         };
 
-        bt {
+        sys {
         // TODO: consider matching the numpad layer in this arrangement
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│    F12   │    F7    │    F8    │    F9    │          │      │          │    mac   │  linux   │          │          │
@@ -388,11 +391,13 @@
         //                      ╰──────────┴──────────┴──────────╯      ╰──────────┴──────────┴──────────╯
         // TODO: create a pinky layer tap on period to get to function layer
         // TODO: create a pinky layer tap on W to get to bt/lighting/system layer
-            display-name = "bt";
+        // find somewhere for c_vol_up, c_vol_down, c_mute, c_bri_up, c_bri_dn, c_play_pause (c_pp)?
+        // consider putting the corresponding bt disc below each bt profile? if needed.
+            display-name = "sys";
             bindings = <LAYER_FROM36( \
-               &kp F12,    &kp F7,     &kp F8,     &kp F9,       &trans,            &trans,     &df 0,     &df 1,      &trans,     &trans, \
+               &kp F12,    &kp F7,     &kp F8,     &kp F9,       &bootloader,    &bootloader,     &df MAC,     &df LIN,      &trans,     &trans, \
                &kp F11,    &kp F4,     &kp F5,     &kp F6,       &trans,         &bt BT_CLR, &bt BT_SEL 0, &bt BT_SEL 1, &bt BT_SEL 2, &bt BT_SEL 3, \
-               &kp F10,    &kp F1,     &kp F2,     &kp F3,       &trans,            &trans,     &trans,     &trans,     &trans,     &trans, \
+               &kp F10,    &kp F1,     &kp F2,     &kp F3,       &sys_reset,     &sys_reset,     &trans,     &trans,     &trans,     &trans, \
                                        &trans,     &trans,     &trans,            &trans,     &trans,     &trans
             )>;
         };

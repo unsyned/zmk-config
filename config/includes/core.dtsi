@@ -328,7 +328,7 @@
                                    &trans,   &td_shift,       &lhbs SYM BSPC,        ENCODER,       &ltsp NAV SPACE,     &kp ENTER,      &trans
             )>;
             #ifdef ENCODER
-              sensor-bindings = SENSOR_PROPS;
+              sensor-bindings = <SENSOR_PROPS>;
             #endif
         };
 
@@ -341,7 +341,7 @@
                                    &trans,   &trans,       &trans,        ENCODER,          &trans,     &trans,      &trans
             )>;
             #ifdef ENCODER
-              sensor-bindings = SENSOR_PROPS;
+              sensor-bindings = <SENSOR_PROPS>;
             #endif
         };
 
@@ -364,7 +364,7 @@
                                       &bootloader,     &trans,      &trans,    ENCODER,     &kp ESC,  &kp DEL,  &trans
             )>;
             #ifdef ENCODER
-              sensor-bindings = SENSOR_PROPS;
+              sensor-bindings = <SENSOR_PROPS>;
             #endif
         };
 
@@ -386,7 +386,7 @@
                                     &trans,  &kp TAB,     &kp ENTER,    ENCODER,     &trans,      &trans,   &sys_reset
             )>;
             #ifdef ENCODER
-              sensor-bindings = SENSOR_PROPS;
+              sensor-bindings = <SENSOR_PROPS>;
             #endif
         };
 

@@ -56,10 +56,10 @@ include:
     artifact-name: nice2_reset
 
   # le jlwffre
-  # - board: le_jlwffre
-  #   artifact-name: chiff
-  # - board: le_jlwffre
-    # shield: settings_reset
+  - board: le_jlwffre
+    artifact-name: chiff
+  - board: le_jlwffre
+    shield: settings_reset
 
   # zen
   - board: corneish_zen_v2_left

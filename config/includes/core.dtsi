@@ -201,6 +201,20 @@
             timeout-ms = <20>;
         };
 
+        bri_dn {
+            bindings = <&kp C_BRI_DN>;
+            key-positions = <RB1 RB2>;
+            require-prior-idle-ms = <40>;
+            timeout-ms = <30>;
+        };
+
+        bri_up {
+            bindings = <&kp C_BRI_UP>;
+            key-positions = <RB2 RB3>;
+            require-prior-idle-ms = <40>;
+            timeout-ms = <30>;
+        };
+
         //*** OS specific combos ***//
         // mac combos
         /* copy { */
@@ -325,7 +339,7 @@
              &kp J,      &kp L,      &kp Y,      &kp P,      &kp K,                              &kp Z,      &kp F,      &kp O,      &kp U,      &kp SQT, \
         &hrm LCTRL C,  &hrm LALT R,  &hrm LGUI S,  &hrs LSHFT T,  &kp G,                         &kp M,   &hrs RSHFT N,  &hrm RGUI E,  &hrm RALT I,  &hrm RCTRL A, \
              &kp W,    &lp LG(X) Q,  &lp LG(C) V,  &lp LG(V) D,   &kp B,                         &kp X,         &kp H,          &kp FSLH,   &comma,  &dot, \
-                                   &trans,   &td_shift,       &lhbs SYM BSPC,        ENCODER,       &ltsp NAV SPACE,     &kp ENTER,      &trans
+                                   &trans,   &kp ENTER,       &ltsp SYM SPACE,        ENCODER,       &lhbs NAV BSPC,     &td_shift,      &trans
             )>;
             #ifdef ENCODER
               sensor-bindings = <SENSOR_PROPS>;
@@ -403,7 +417,6 @@
         //                      ╰──────────┴──────────┴──────────╯      ╰──────────┴──────────┴──────────╯
         // TODO: create a pinky layer tap on period to get to function layer
         // TODO: create a pinky layer tap on W to get to bt/lighting/system layer
-        // find somewhere for c_vol_up, c_vol_down, c_mute, c_bri_up, c_bri_dn, c_play_pause (c_pp)?
         // consider putting the corresponding bt disc below each bt profile? if needed.
             display-name = "sys";
             bindings = <LAYER_FROM36( \

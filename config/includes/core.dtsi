@@ -350,7 +350,7 @@
             label = "lin";
             bindings = <CORE( \
              &trans, &trans,      &trans,      &trans,      &trans,      &trans,                             &trans,      &trans,      &trans,      &trans,      &trans, &trans, \
-             &trans, &trans,  &trans,  &trans,  &trans,  &trans,                     &trans,   &trans,  &trans,  &trans,  &trans, \                                      &trans, 
+             &trans, &trans,  &trans,  &trans,  &trans,  &trans,                     &trans,   &trans,  &trans,  &trans,  &trans, &trans, \
              &trans, &trans,      &lp LC(X) Q, &lp LC(C) V, &lp LC(V) D,      &trans,                             &trans,      &trans,      &trans,   &trans,  &trans, &trans, \
                                    &trans,   &trans,       &trans,        ENCODER,          &trans,     &trans,      &trans
             )>;

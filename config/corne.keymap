@@ -6,3 +6,9 @@
 
 #include "key_labels/42.h"
 #include "includes/core.dtsi"
+
+/ {
+  chosen {
+    zmk,matrix_transform = &default_transform;
+  };
+};

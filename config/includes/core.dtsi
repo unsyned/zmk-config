@@ -336,9 +336,9 @@
             //                      ╰──────────┴──────────┴──────────╯     ╰──────────┴──────────┴──────────╯
 
             bindings = <CORE( \
-             &kp TAB, &kp J,      &kp L,      &kp Y,      &kp P,      &kp K,                              &kp Z,      &kp F,      &kp O,      &kp U,      &kp SQT, &kp BSPC, \
+             &kp TAB, &kp W,      &kp L,      &kp Y,      &kp P,      &kp B,                              &kp Z,      &kp F,      &kp O,      &kp U,      &kp SQT, &kp BSPC, \
              &mt LCTRL ESCAPE, &hrm LCTRL C,  &hrm LALT R,  &hrm LGUI S,  &hrs LSHFT T,  &kp G,                         &kp M,   &hrs RSHFT N,  &hrm RGUI E,  &hrm RALT I,  &hrm RCTRL A, &kp ENTER, \
-             &kp LSHFT, &kp W,    &lp LG(X) Q,  &lp LG(C) V,  &lp LG(V) D,   &kp B,                         &kp X,         &kp H,          &kp FSLH,   &comma,  &dot, &kp RSHIFT, \
+             &kp LSHFT, &kp Q,    &lp LG(X) J,  &lp LG(C) V,  &lp LG(V) D,   &kp B,                         &kp X,         &kp H,          &kp FSLH,   &comma,  &dot, &kp RSHIFT, \
                                    &trans,   &kp ENTER,       &ltsp SYM SPACE,        ENCODER,       &lhbs NAV BSPC,     &td_shift,      &trans
             )>;
             #ifdef ENCODER

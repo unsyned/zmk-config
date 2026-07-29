@@ -22,7 +22,7 @@
 #define SYM 2
 #define NAV 3 // numpad and navigation
 #define SYS 4 // fn, bluetooth, media controls
-// #define mse 5
+// #define MSE 5
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -235,37 +235,37 @@
         /*     layers = <0>; */
         /* }; */
 
-        back_word {
-            bindings = <&kp LA(BSPC)>;
-            key-positions = <LM3 LM1>;
-            require-prior-idle-ms = <50>;
-            timeout-ms = <20>;
-            layers = <0>;
-        };
-
-        del_word {
-            bindings = <&kp LA(DEL)>;
-            key-positions = <RM1 RM3>;
-            require-prior-idle-ms = <50>;
-            timeout-ms = <20>;
-            layers = <0>;
-        };
-
-        undo {
-            bindings = <&kp LG(Z)>;
-            key-positions = <RT1 RT2>;
-            require-prior-idle-ms = <50>;
-            timeout-ms = <20>;
-            layers = <0>;
-        };
-
-        redo {
-            bindings = <&kp LG(LS(Z))>;
-            key-positions = <RT2 RT3>;
-            require-prior-idle-ms = <50>;
-            timeout-ms = <20>;
-            layers = <0>;
-        };
+        /* back_word { */
+        /*     bindings = <&kp LA(BSPC)>; */
+        /*     key-positions = <LM3 LM1>; */
+        /*     require-prior-idle-ms = <50>; */
+        /*     timeout-ms = <20>; */
+        /*     layers = <0>; */
+        /* }; */
+        /**/
+        /* del_word { */
+        /*     bindings = <&kp LA(DEL)>; */
+        /*     key-positions = <RM1 RM3>; */
+        /*     require-prior-idle-ms = <50>; */
+        /*     timeout-ms = <20>; */
+        /*     layers = <0>; */
+        /* }; */
+        /**/
+        /* undo { */
+        /*     bindings = <&kp LG(Z)>; */
+        /*     key-positions = <RT1 RT2>; */
+        /*     require-prior-idle-ms = <50>; */
+        /*     timeout-ms = <20>; */
+        /*     layers = <0>; */
+        /* }; */
+        /**/
+        /* redo { */
+        /*     bindings = <&kp LG(LS(Z))>; */
+        /*     key-positions = <RT2 RT3>; */
+        /*     require-prior-idle-ms = <50>; */
+        /*     timeout-ms = <20>; */
+        /*     layers = <0>; */
+        /* }; */
 
         // linux combos
         /* copy_lin { */
@@ -286,37 +286,37 @@
         /*     layers = <1>; */
         /* }; */
 
-        back_word_lin {
-            bindings = <&kp LC(BSPC)>;
-            key-positions = <LM3 LM1>;
-            require-prior-idle-ms = <50>;
-            timeout-ms = <20>;
-            layers = <1>;
-        };
-
-        del_word_lin {
-            bindings = <&kp LC(DEL)>;
-            key-positions = <RM1 RM3>;
-            require-prior-idle-ms = <50>;
-            timeout-ms = <20>;
-            layers = <1>;
-        };
-
-        undo_lin {
-            bindings = <&kp LC(Z)>;
-            key-positions = <RT1 RT2>;
-            require-prior-idle-ms = <50>;
-            timeout-ms = <20>;
-            layers = <1>;
-        };
-
-        redo_lin {
-            bindings = <&kp LC(Y)>;
-            key-positions = <RT2 RT3>;
-            require-prior-idle-ms = <50>;
-            timeout-ms = <20>;
-            layers = <1>;
-        };
+        /* back_word_lin { */
+        /*     bindings = <&kp LC(BSPC)>; */
+        /*     key-positions = <LM3 LM1>; */
+        /*     require-prior-idle-ms = <50>; */
+        /*     timeout-ms = <20>; */
+        /*     layers = <1>; */
+        /* }; */
+        /**/
+        /* del_word_lin { */
+        /*     bindings = <&kp LC(DEL)>; */
+        /*     key-positions = <RM1 RM3>; */
+        /*     require-prior-idle-ms = <50>; */
+        /*     timeout-ms = <20>; */
+        /*     layers = <1>; */
+        /* }; */
+        /**/
+        /* undo_lin { */
+        /*     bindings = <&kp LC(Z)>; */
+        /*     key-positions = <RT1 RT2>; */
+        /*     require-prior-idle-ms = <50>; */
+        /*     timeout-ms = <20>; */
+        /*     layers = <1>; */
+        /* }; */
+        /**/
+        /* redo_lin { */
+        /*     bindings = <&kp LC(Y)>; */
+        /*     key-positions = <RT2 RT3>; */
+        /*     require-prior-idle-ms = <50>; */
+        /*     timeout-ms = <20>; */
+        /*     layers = <1>; */
+        /* }; */
 
     };
 

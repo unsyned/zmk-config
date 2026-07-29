@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/M165437
     - name: elpekenin
       url-base: https://github.com/elpekenin
+    - name: unsyned
+      url-base: https://github.com/unsyned
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -23,7 +25,9 @@ manifest:
       remote: m165437
       revision: v0.3.0 # revision should match zmk's revision
     - name: zmk-userspace # for persistent default layer
-      remote: elpekenin
-      revision: main
+      # remote: elpekenin
+      # revision: main
+      remote: unsyned
+      revision: v0.3
   self:
     path: config

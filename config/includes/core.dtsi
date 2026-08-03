@@ -162,23 +162,7 @@
         // mod morphs: brightness up/down, prev/skip track
         // TODO: try if esc and caps word on, consume to cancel caps word
         // TODO: look into cmd + long press for fast forward and rewind
-        prev: prev_track {
-            compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp C_VOL_DN>, <&kp C_PREV>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-        };
-
-        next: next_track {
-            compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp C_VOL_UP>, <&kp C_NEXT>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-        };
-
-        bri_dn: brightness_down {
+        bri_or_vol_dn: bri_or_vol_dn {
             compatible = "zmk,behavior-mod-morph";
             bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
 
@@ -186,12 +170,28 @@
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
-        bri_up: brightness_up {
+        vpb_dn: vol_prev_bri_dn {
             compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
+            bindings = <&bri_or_vol_dn>, <&kp C_PREV>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        bri_or_vol_up: bri_or_vol_up {
+          compatible = "zmk,behavior-mod-morph";
+          bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
+
+          #binding-cells = <0>;
+          mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
+        vpb_up: vol_prev_bri_up {
+          compatible = "zmk,behavior-mod-morph";
+          bindings = <&bri_or_vol_up>, <&kp C_NEXT>;
+
+          #binding-cells = <0>;
+          mods = <(MOD_LGUI|MOD_RGUI)>;
         };
     };
 

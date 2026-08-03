@@ -168,6 +168,7 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
+            keep-mods = <0>;
         };
 
         vpb_dn: vol_prev_bri_dn {
@@ -176,6 +177,7 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <0>;
         };
 
         bri_or_vol_up: bri_or_vol_up {
@@ -184,6 +186,7 @@
 
           #binding-cells = <0>;
           mods = <(MOD_LALT|MOD_RALT)>;
+          keep-mods = <0>;
         };
 
         vpb_up: vol_prev_bri_up {
@@ -192,6 +195,7 @@
 
           #binding-cells = <0>;
           mods = <(MOD_LGUI|MOD_RGUI)>;
+          keep-mods = <0>;
         };
     };
 

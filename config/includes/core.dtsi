@@ -159,6 +159,40 @@
             tapping-term-ms = <155>;
             flavor = "balanced";
         };
+        // mod morphs: brightness up/down, prev/skip track
+        // TODO: try if esc and caps word on, consume to cancel caps word
+        // TODO: look into cmd + long press for fast forward and rewind
+        prev: prev_track {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp C_VOL_DN>, <&kp C_PREV>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        next: next_track {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp C_VOL_UP>, <&kp C_NEXT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        bri_dn: brightness_down {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
+        bri_up: brightness_up {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
     };
 
     combos {
@@ -201,19 +235,19 @@
             timeout-ms = <20>;
         };
 
-        bri_dn {
-            bindings = <&kp C_BRI_DN>;
-            key-positions = <RB1 RB2>;
-            require-prior-idle-ms = <40>;
-            timeout-ms = <30>;
-        };
-
-        bri_up {
-            bindings = <&kp C_BRI_UP>;
-            key-positions = <RB2 RB3>;
-            require-prior-idle-ms = <40>;
-            timeout-ms = <30>;
-        };
+        /* bri_dn { */
+        /*     bindings = <&kp C_BRI_DN>; */
+        /*     key-positions = <RB1 RB2>; */
+        /*     require-prior-idle-ms = <40>; */
+        /*     timeout-ms = <30>; */
+        /* }; */
+        /**/
+        /* bri_up { */
+        /*     bindings = <&kp C_BRI_UP>; */
+        /*     key-positions = <RB2 RB3>; */
+        /*     require-prior-idle-ms = <40>; */
+        /*     timeout-ms = <30>; */
+        /* }; */
 
         //*** OS specific combos ***//
         // mac combos

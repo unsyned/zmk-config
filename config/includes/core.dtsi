@@ -135,6 +135,14 @@
             flavor = "tap-preferred";
         };
 
+        qmark: qmark_excl_on_shift {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp QMARK>, <&kp EXCL>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         comma: comma_semicolon_on_shift {
             compatible = "zmk,behavior-mod-morph";
             bindings = <&kp COMMA>, <&kp SEMI>;
@@ -376,7 +384,7 @@
             bindings = <CORE( \
              &kp TAB, &kp W,      &kp L,      &kp Y,      &kp P,      &kp B,                              &kp Z,      &kp F,      &kp O,      &kp U,      &kp SQT, &kp BSPC, \
              &mt LCTRL ESCAPE, &hrm LCTRL C,  &hrm LALT R,  &hrm LGUI S,  &hrs LSHFT T,  &kp G,                         &kp M,   &hrs RSHFT N,  &hrm RGUI E,  &hrm RALT I,  &hrm RCTRL A, &kp ENTER, \
-             &kp LSHFT, &kp Q,    &lp LG(X) J,  &lp LG(C) V,  &lp LG(V) D,   &kp K,                         &kp X,         &kp H,          &kp FSLH,   &comma,  &dot, &kp RSHIFT, \
+             &kp LSHFT, &kp Q,    &lp LG(X) J,  &lp LG(C) V,  &lp LG(V) D,   &kp K,                         &kp X,         &kp H,          &qmark,   &comma,  &dot, &kp RSHIFT, \
                                    &trans,   &kp ENTER,       &ltsp SYM SPACE,        ENCODER,       &lhbs NAV BSPC,     &td_shift,      &trans
             )>;
             #ifdef ENCODER
@@ -410,9 +418,9 @@
         //                      ╰──────────┴──────────┴──────────╯      ╰──────────┴──────────┴──────────╯
 
             bindings = <CORE( \
-              &trans, &kp EXCLAMATION,  &kp AT,     &kp HASH,   &kp DOLLAR,  &kp PERCENT,    &kp CARET,  &kp AMPS,   &kp STAR,   &kp TILDE,  &kp GRAVE, &trans, \
-              &trans, &hrm LCTRL LESS_THAN,  &hrm LALT LBKT,  &hrm LGUI LBRC,  &hrs LSHFT LPAR,   &kp BSLH,  &kp PIPE,  &hrs RSHFT RPAR,  &hrm RGUI RBRC,  &hrm RALT RBKT,  &hrm RCTRL GREATER_THAN, &trans, \
-              &trans, &kp BSLH,      &kp COLON,   &kp SEMI, &kp TILDE,  &kp GRAVE,         &kp UNDER,      &kp MINUS,    &kp PLUS,    &kp EQUAL,  &kp QMARK, &trans, \
+              &trans, &kp EXCL,  &kp AT,     &kp HASH,   &kp DOLLAR,  &kp PERCENT,    &kp CARET,  &kp AMPS,   &kp STAR,   &kp TILDE,  &kp GRAVE, &trans, \
+              &trans, &hrm LCTRL LESS_THAN,  &hrm LALT LBKT,  &hrm LGUI LBRC,  &hrs LSHFT LPAR,   &kp BSLH,  &kp FSLH,  &hrs RSHFT RPAR,  &hrm RGUI RBRC,  &hrm RALT RBKT,  &hrm RCTRL GREATER_THAN, &trans, \
+              &trans, &kp PIPE,      &kp COLON,   &kp SEMI, &kp COMMA,  &kp DOT,         &kp UNDER,      &kp MINUS,    &kp PLUS,    &kp EQUAL,  &kp QMARK, &trans, \
                                       &bootloader,     &trans,      &trans,    ENCODER,     &kp ESC,  &kp DEL,  &trans
             )>;
             #ifdef ENCODER

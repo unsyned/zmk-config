@@ -22,7 +22,8 @@
 #define SYM 2
 #define NAV 3 // numpad and navigation
 #define SYS 4 // fn, bluetooth, media controls
-// #define MSE 5
+#define MED 5
+// #define MSE 6
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -160,6 +161,14 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ldot: layer_dot {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&mo>, <&dot>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
         };
 
         lp: long_press {
@@ -365,8 +374,8 @@
 
             bindings = <CORE( \
              &kp TAB, &kp W,      &kp L,      &kp Y,      &kp P,      &kp B,                              &kp Z,      &kp F,      &kp O,      &kp U,      &kp SQT, &kp BSPC, \
-             &mt LCTRL ESCAPE, &hrm LCTRL C,  &hrm LALT R,  &hrm LGUI S,  &hrs LSHFT T,  &kp G,                         &kp M,   &hrs RSHFT N,  &hrm RGUI E,  &hrm RALT I,  &hrm RCTRL A, &kp ENTER, \
-             &kp LSHFT, &kp Q,    &lp LG(X) J,  &lp LG(C) V,  &lp LG(V) D,   &kp K,                         &kp X,         &kp H,          &qmark,   &comma,  &dot, &kp RSHIFT, \
+             &mt LCTRL ESCAPE, &hrm LCTRL C,  &hrm LALT R,  &hrm LGUI S,  &hrs LSHFT T,  &lt SYS G,                         &lt SYS M,   &hrs RSHFT N,  &hrm RGUI E,  &hrm RALT I,  &hrm RCTRL A, &kp ENTER, \
+             &kp LSHFT, &kp Q,    &lp LG(X) J,  &lp LG(C) V,  &lp LG(V) D,   &kp K,                         &kp X,         &kp H,          &qmark,   &comma,  &ldot MED 0, &kp RSHIFT, \
                                    &trans,   &kp ENTER,       &ltsp SYM SPACE,        ENCODER,       &lhbs NAV BSPC,     &td_shift,      &key_repeat
             )>;
             #ifdef ENCODER
@@ -452,6 +461,19 @@
                &trans, &kp F11,    &kp F4,     &kp F5,     &kp F6,       &trans,         &bt BT_CLR, &bt BT_SEL 0, &bt BT_SEL 1, &bt BT_SEL 2, &bt BT_SEL 3, &trans, \
                &trans, &kp F10,    &kp F1,     &kp F2,     &kp F3,       &sys_reset,     &sys_reset,     &kp C_BRI_DN,     &trans,     &kp C_BRI_UP,     &trans, &trans, \
                                        &trans,     &trans,     &trans,     ENCODER,       &trans,     &trans,     &trans
+            )>;
+            #ifdef ENCODER
+              sensor-bindings = <SENSOR_PROPS>;
+            #endif
+        };
+
+        med {
+            label = "med";
+            bindings = <CORE( \
+             &trans, &trans,      &trans,      &trans,      &trans,      &trans,                             &trans,      &trans,      &trans,      &trans,      &trans, &trans, \
+             &trans, &trans,  &trans,  &trans,  &trans,  &trans,                     &trans,   &trans,  &kp C_VOL_DN,  &kp C_MUTE,  &kp C_VOL_UP, &trans, \
+             &trans, &trans,      &trans, &trans, &trans,      &trans,                             &trans,      &kp C_PREV,   &kp  C_PLAY_PAUSE, &kp C_NEXT,  &trans, &trans, \
+                                   &trans,   &trans,       &trans,        ENCODER,          &trans,     &trans,      &trans
             )>;
             #ifdef ENCODER
               sensor-bindings = <SENSOR_PROPS>;

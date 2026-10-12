@@ -432,8 +432,8 @@
             label = "nav";
             bindings = <CORE( \
               &trans, &kp KP_MINUS,    &kp N7,      &kp N8,      &kp N9,   &kp COMMA,          &kp PSCRN,  &kp HOME,    &kp UP,     &kp END,   &kp PG_UP, &trans, \
-              &trans, &hrm LCTRL N0,   &hrm LALT N1,  &hrm LGUI N2,     &hrs LSHFT N3,     &kp COLON,           &bri_vol_up,  &hrm RSHFT LEFT,  &hrm RGUI DOWN,    &hrm RALT RIGHT,   &hrm RCTRL PG_DN, &trans, \
-              &trans, &kp KP_PLUS,  &kp N4,    &kp N5,      &kp N6,   &kp DOT,            &bri_vol_dn, &kp C_PREV,   &lp C_MUTE C_PLAY_PAUSE, &kp C_NEXT, &kp INS, &trans, \
+              &trans, &hrm LCTRL N0,   &hrm LALT N1,  &hrm LGUI N2,     &hrs LSHFT N3,     &kp COLON,           &lp INS DEL,  &hrm RSHFT LEFT,  &hrm RGUI DOWN,    &hrm RALT RIGHT,   &hrm RCTRL PG_DN, &trans, \
+              &trans, &kp KP_PLUS,  &kp N4,    &kp N5,      &kp N6,   &kp DOT,            &bri_vol_dn, &kp C_PREV,   &lp C_MUTE C_PLAY_PAUSE, &kp C_NEXT, &bri_vol_up, &trans, \
                                     &trans,  &kp TAB,     &kp ENTER,    ENCODER,     &trans,      &kp RSHFT,   &trans
             )>;
             #ifdef ENCODER
